@@ -1,44 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
     const htmlElement = document.documentElement;
     
     // Check for saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.classList.toggle('dark', savedTheme === 'dark');
     
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             const isDark = htmlElement.classList.toggle('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             updateThemeIcons();
         });
-    }
+    });
 
     function updateThemeIcons() {
-        const sunIcon = document.querySelector('.sun-icon');
-        const moonIcon = document.querySelector('.moon-icon');
-        if (sunIcon && moonIcon) {
-            if (htmlElement.classList.contains('dark')) {
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
-            } else {
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
-            }
-        }
+        const sunIcons = document.querySelectorAll('.sun-icon');
+        const moonIcons = document.querySelectorAll('.moon-icon');
+        const isDark = htmlElement.classList.contains('dark');
+        
+        sunIcons.forEach(icon => {
+            if (isDark) icon.classList.add('hidden');
+            else icon.classList.remove('hidden');
+        });
+        
+        moonIcons.forEach(icon => {
+            if (isDark) icon.classList.remove('hidden');
+            else icon.classList.add('hidden');
+        });
     }
     updateThemeIcons();
 
     // RTL Toggle Logic
-    const rtlToggle = document.getElementById('rtl-toggle');
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
+    const rtlToggles = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile');
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             const isRtl = htmlElement.getAttribute('dir') === 'rtl';
             htmlElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
             localStorage.setItem('dir', isRtl ? 'ltr' : 'rtl');
         });
-    }
+    });
     
     // Check for saved direction
     const savedDir = localStorage.getItem('dir') || 'ltr';
@@ -57,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sidebar Toggle (Dashboard)
     const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.getElementById('sidebar-overlay');
 
@@ -64,6 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebarToggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             if (overlay) overlay.classList.toggle('hidden');
+        });
+    }
+
+    if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            if (overlay) overlay.classList.add('hidden');
         });
     }
 
@@ -134,21 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         update();
     }
 
-    // Mouse Follow Glow Effect
-    const mouseGlow = document.createElement('div');
-    mouseGlow.className = 'mouse-glow';
-    document.body.appendChild(mouseGlow);
-
-    document.addEventListener('mousemove', (e) => {
-        mouseGlow.style.display = 'block';
-        mouseGlow.style.left = e.pageX + 'px';
-        mouseGlow.style.top = e.pageY + 'px';
-    });
-
-    // Button Glow Pulse setup
-    document.querySelectorAll('.glow-pulse').forEach(btn => {
-        btn.classList.add('transition-all');
-    });
     // Back to Top Logic
     const backToTop = document.getElementById('back-to-top');
     if (backToTop) {

@@ -30,30 +30,30 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<body class="bg-[#F8FAFF] dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
     
     <!-- Navbar (Identical) -->
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
                         <i data-lucide="activity"></i>
                     </div>
                     <span class="text-2xl font-bold tracking-tight font-heading">Insight<span class="gradient-text">Analytics</span></span>
+                </a>
+                <div class="hidden lg:flex items-center lg:space-x-0 xl:space-x-1">
+                    <a href="index.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Home1</a>
+                    <a href="home2.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Home2</a>
+                    <a href="about.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium text-primary-500 transition-colors">About</a>
+                    <a href="services.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Services</a>
+                    <a href="case-studies.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Case Studies</a>
+                    <a href="blog.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Blog</a>
+                    <a href="dashboard.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Dashboard</a>
+                    <a href="contact.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Contact</a>
                 </div>
-                <div class="hidden lg:flex items-center space-x-1">
-                    <a href="index.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Home1</a>
-                    <a href="home2.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Home2</a>
-                    <a href="about.html" class="px-3 py-2 text-sm font-medium text-primary-500 transition-colors">About</a>
-                    <a href="services.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Services</a>
-                    <a href="case-studies.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Case Studies</a>
-                    <a href="blog.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Blog</a>
-                    <a href="dashboard.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Dashboard</a>
-                    <a href="contact.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Contact</a>
-                </div>
-                <div class="hidden lg:flex items-center space-x-4">
-                    <div class="flex items-center space-x-2 border-r border-slate-200 dark:border-slate-800 pr-4">
+                <div class="hidden lg:flex items-center lg:space-x-3 xl:space-x-6">
+                    <div class="flex items-center lg:space-x-2 xl:space-x-4 border-e border-slate-200 dark:border-slate-800 lg:pe-3 xl:pe-6">
                         <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                             <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
                             <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
@@ -62,12 +62,15 @@
                             <i data-lucide="languages" class="w-5 h-5"></i>
                         </button>
                     </div>
-                    <a href="login.html" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary-500/25">Login</a>
+                    <a href="login.html" class="bg-primary-600 hover:bg-primary-700 text-white lg:px-4 xl:px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary-500/25">Login</a>
                 </div>
-                <div class="lg:hidden flex items-center space-x-4">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full">
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                         <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
                         <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
+                    </button>
+                    <button id="rtl-toggle-mobile" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
                     </button>
                     <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -107,13 +110,13 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="reveal-left">
-                        <div class="relative max-w-md">
+                        <div class="relative max-w-md mx-auto">
                             <div class="float-element">
                                 <img src="assets/consultant_portrait_modern_1778906353606.png" alt="Consultant Journey" class="rounded-3xl shadow-2xl w-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
                             </div>
-                            <div class="absolute -bottom-6 -right-6 bg-primary-600 text-white p-8 rounded-2xl shadow-xl hover-lift transition-transform">
-                                <p class="text-4xl font-bold"><span class="counter" data-target="8">0</span>+</p>
-                                <p class="text-sm">Years of Experience</p>
+                            <div class="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-primary-600 text-white p-4 sm:p-8 rounded-2xl shadow-xl transition-transform active:scale-95">
+                                <p class="text-2xl sm:text-4xl font-bold"><span class="counter" data-target="8">0</span>+</p>
+                                <p class="text-xs sm:text-sm">Years of Experience</p>
                             </div>
                         </div>
                     </div>
@@ -122,11 +125,11 @@
                         <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">My journey started in UX design, where I realized that intuition is great, but data is undeniable. Over the past decade, I've specialized in the technical implementation of analytics stacks that don't just collect data, but tell a story.</p>
                         <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">I've worked with over 50+ SaaS startups, helping them transition from "vanity metrics" to "actionable behavior insights".</p>
                         <div class="grid grid-cols-2 gap-6">
-                            <div class="hover-lift">
+                            <div>
                                 <h4 class="font-bold text-primary-600 mb-2"><span class="counter" data-target="50">0</span>+ SaaS Optimized</h4>
                                 <p class="text-sm text-slate-500">From seed-stage to Series D.</p>
                             </div>
-                            <div class="hover-lift">
+                            <div>
                                 <h4 class="font-bold text-primary-600 mb-2"><span class="counter" data-target="10">0</span>M+ Sessions</h4>
                                 <p class="text-sm text-slate-500">Across diverse industries.</p>
                             </div>
@@ -137,39 +140,39 @@
         </section>
 
         <!-- Section 3: Expertise & Skills Section -->
-        <section class="py-24 bg-slate-50 dark:bg-slate-900">
+        <section class="py-24 bg-white dark:bg-slate-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 reveal">
                     <h2 class="text-3xl lg:text-5xl font-bold font-heading mb-4">Core <span class="gradient-text">Expertise</span></h2>
                     <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Specialized skills in the modern analytics ecosystem.</p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="glass-card p-10 rounded-3xl reveal-up hover-glow">
-                        <i data-lucide="terminal" class="w-12 h-12 text-primary-600 mb-6 shimmer"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-10 rounded-3xl reveal-up hover-glow text-center">
+                        <i data-lucide="terminal" class="w-12 h-12 text-primary-600 mb-6 mx-auto shimmer"></i>
                         <h3 class="text-2xl font-bold mb-4">Technical Stack</h3>
                         <p class="text-slate-500 mb-6">Expert implementation of Hotjar, FullStory, Mixpanel, Amplitude, and PostHog.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">JavaScript SDKs</span>
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">GTM</span>
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">API Integration</span>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">JavaScript SDKs</span>
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">GTM</span>
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">API Integration</span>
                         </div>
                     </div>
-                    <div class="glass-card p-10 rounded-3xl reveal-up delay-200 hover-glow">
-                        <i data-lucide="brain-circuit" class="w-12 h-12 text-primary-600 mb-6 shimmer"></i>
+                    <div class="glass-card p-10 rounded-3xl reveal-up delay-200 hover-glow text-center">
+                        <i data-lucide="brain-circuit" class="w-12 h-12 text-primary-600 mb-6 mx-auto shimmer"></i>
                         <h3 class="text-2xl font-bold mb-4">Behavioral Science</h3>
                         <p class="text-slate-500 mb-6">Mapping digital interactions to psychological triggers and friction points.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">Cognitive Load</span>
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">Friction Mapping</span>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">Cognitive Load</span>
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">Friction Mapping</span>
                         </div>
                     </div>
-                    <div class="glass-card p-10 rounded-3xl reveal-up delay-400 hover-glow">
-                        <i data-lucide="lock" class="w-12 h-12 text-primary-600 mb-6 shimmer"></i>
+                    <div class="glass-card p-10 rounded-3xl reveal-up delay-400 md:col-span-2 lg:col-span-1 hover-glow text-center">
+                        <i data-lucide="lock" class="w-12 h-12 text-primary-600 mb-6 mx-auto shimmer"></i>
                         <h3 class="text-2xl font-bold mb-4">Data Privacy</h3>
                         <p class="text-slate-500 mb-6">Implementing recording masking that satisfies strict legal compliance.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">GDPR</span>
-                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs hover-lift transition-transform">PII Masking</span>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">GDPR</span>
+                            <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs transition-transform">PII Masking</span>
                         </div>
                     </div>
                 </div>
@@ -179,29 +182,29 @@
         <!-- Section 4: Product Growth Mission -->
         <section class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-slate-900 rounded-[3rem] overflow-hidden reveal-scale relative">
-                    <div class="blob -top-24 -left-24 bg-primary-600/20"></div>
+                <div class="bg-primary-50 dark:bg-slate-900 rounded-[3rem] overflow-hidden reveal-scale relative border border-primary-100 dark:border-slate-800">
+                    <div class="blob -top-24 -left-24 bg-primary-600/10 dark:bg-primary-600/20"></div>
                     <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                        <div class="p-12 lg:p-20">
-                            <h2 class="text-4xl font-bold font-heading text-white mb-6">My Mission: <span class="gradient-text">Zero Guesswork</span></h2>
-                            <p class="text-lg text-slate-400 mb-8">I believe that every product decision should be backed by objective user behavior data. My mission is to eliminate guesswork from SaaS development, ensuring teams build what users actually need, not what they think they need.</p>
-                            <div class="space-y-4">
-                                <div class="flex items-center gap-4 text-white hover-lift transition-transform">
+                        <div class="p-12 lg:p-20 text-center lg:text-left">
+                            <h2 class="text-4xl font-bold font-heading text-slate-900 dark:text-white mb-6">My Mission: <span class="gradient-text">Zero Guesswork</span></h2>
+                            <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">I believe that every product decision should be backed by objective user behavior data. My mission is to eliminate guesswork from SaaS development, ensuring teams build what users actually need, not what they think they need.</p>
+                            <div class="space-y-4 flex flex-col items-center lg:items-start">
+                                <div class="flex items-center gap-4 text-slate-700 dark:text-white transition-transform active:scale-95">
                                     <div class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                                    <span>User-Centric Data Design</span>
+                                    <span class="font-semibold">User-Centric Data Design</span>
                                 </div>
-                                <div class="flex items-center gap-4 text-white hover-lift transition-transform">
+                                <div class="flex items-center gap-4 text-slate-700 dark:text-white transition-transform active:scale-95">
                                     <div class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                                    <span>Privacy-First Implementation</span>
+                                    <span class="font-semibold">Privacy-First Implementation</span>
                                 </div>
-                                <div class="flex items-center gap-4 text-white hover-lift transition-transform">
+                                <div class="flex items-center gap-4 text-slate-700 dark:text-white transition-transform active:scale-95">
                                     <div class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-                                    <span>Action-Oriented Reporting</span>
+                                    <span class="font-semibold">Action-Oriented Reporting</span>
                                 </div>
                             </div>
                         </div>
                         <div class="h-full min-h-[400px] overflow-hidden">
-                            <img src="assets/data_growth_mission_1778906368488.png" alt="Mission Vision" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                            <img src="assets/data_growth_mission_1778906368488.png" alt="Mission Vision" class="w-full h-full object-cover transition-transform duration-1000" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
                         </div>
                     </div>
                 </div>
@@ -211,7 +214,7 @@
 
         <!-- Section: Newsletter -->
         <section class="py-24 relative overflow-hidden">
-            <div class="max-w-5xl mx-auto px-4 reveal-scale">
+            <div class="max-w-5xl mx-auto px-4">
                 <div class="newsletter-card p-12 rounded-[3rem] text-center relative z-10">
                     <h2 class="text-3xl lg:text-5xl font-bold font-heading mb-6">Stay Ahead of the <span class="gradient-text">Curve</span></h2>
                     <p class="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-lg">
@@ -219,7 +222,7 @@
                     </p>
                     <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                         <input type="email" placeholder="Enter your work email" class="flex-1 px-6 py-4 rounded-full outline-none focus:ring-2 focus:ring-primary-500 newsletter-input transition-all" required>
-                        <button type="submit" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold transition-all shadow-lg shadow-primary-500/25 whitespace-nowrap">
+                        <button type="submit" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold transition-all shadow-lg shadow-primary-500/25 whitespace-nowrap hover-lift hover:shadow-primary-500/40">
                             Subscribe Now
                         </button>
                     </form>
@@ -234,23 +237,23 @@
             <div class="grid md:grid-cols-12 gap-12 mb-16">
                 <div class="md:col-span-4">
                     <div class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white">
-                            <i data-lucide="activity" class="w-5 h-5"></i>
+                        <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20">
+                            <i data-lucide="activity"></i>
                         </div>
-                        <span class="text-xl font-bold font-heading">InsightAnalytics</span>
+                        <span class="text-2xl font-bold tracking-tight font-heading">Insight<span class="gradient-text">Analytics</span></span>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
                         Helping SaaS companies understand their users through advanced session recording and product analytics implementation.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group">
-                            <i data-lucide="twitter" class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group hover-lift shadow-sm">
+                            <i data-lucide="twitter" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group">
-                            <i data-lucide="linkedin" class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group hover-lift shadow-sm">
+                            <i data-lucide="linkedin" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group">
-                            <i data-lucide="github" class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                        <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group hover-lift shadow-sm">
+                            <i data-lucide="github" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"></i>
                         </a>
                     </div>
                 </div>
@@ -284,10 +287,11 @@
                 </div>
             </div>
             <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                <p>© 2026 InsightAnalytics. All rights reserved.</p>
+                <p>&copy; 2024 InsightAnalytics. All rights reserved.</p>
                 <div class="flex gap-8">
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="#" class="hover:text-primary-500 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-500 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-primary-500 transition-colors">Cookies Settings</a>
                 </div>
             </div>
         </div>
