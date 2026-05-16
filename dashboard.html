@@ -76,37 +76,28 @@
                 <!-- Nav Links -->
                 <nav class="flex-1 space-y-1">
                     <a href="#" data-section="overview" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-primary-900/30 text-primary-600 font-bold active">
-                        <i data-lucide="layout-dashboard"></i> Overview
+                        <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Overview
                     </a>
                     <a href="#" data-section="session" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="play-circle"></i> Session Replays
+                        <i data-lucide="play-circle" class="w-5 h-5"></i> Session Replays
                     </a>
                     <a href="#" data-section="funnels" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="filter"></i> Funnels
+                        <i data-lucide="filter" class="w-5 h-5"></i> Funnels
                     </a>
                     <a href="#" data-section="heatmaps" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="layers"></i> Heatmaps
+                        <i data-lucide="layers" class="w-5 h-5"></i> Heatmaps
                     </a>
                     <a href="#" data-section="rage" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="mouse-pointer-click"></i> Rage Clicks
+                        <i data-lucide="mouse-pointer-click" class="w-5 h-5"></i> Rage Clicks
                     </a>
                     <a href="#" data-section="settings" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="settings"></i> Settings
+                        <i data-lucide="settings" class="w-5 h-5"></i> Settings
                     </a>
                 </nav>
 
                     <!-- User Profile -->
                     <div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
                         <div class="flex items-center justify-center px-4 mb-6 pb-6 border-b border-slate-100 dark:border-slate-800/50">
-                            <div class="flex items-center gap-4">
-                                <button id="theme-toggle-sidebar" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                                    <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
-                                    <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
-                                </button>
-                                <button id="rtl-toggle-sidebar" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                                    <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
-                                </button>
-                            </div>
                         </div>
                         <div class="flex items-center gap-3 px-4 py-3">
                             <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center font-bold text-primary-600">JD</div>
@@ -143,6 +134,19 @@
                 </div>
                 
                 <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- Theme & RTL Toggles (Added for all views) -->
+
+                    <!-- Theme & RTL Toggles (Added for all views) -->
+                    <div class="flex items-center gap-1 sm:gap-3 border-e border-slate-200 dark:border-slate-800 pe-2 sm:pe-4">
+                        <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
+                            <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
+                            <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
+                        </button>
+                        <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL">
+                            <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+
                     <!-- Notifications -->
                     <button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 relative text-slate-600 dark:text-slate-400">
                         <i data-lucide="bell" class="w-5 h-5"></i>
@@ -206,7 +210,7 @@
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up hover-lift hover-glow transition-all">
                         <div class="flex justify-between items-center mb-4">
                             <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-xl flex items-center justify-center shimmer">
-                                <i data-lucide="users"></i>
+                                <i data-lucide="users" class="w-6 h-6"></i>
                             </div>
                             <span class="text-xs font-bold text-green-500 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-lg">+14%</span>
                         </div>
@@ -216,7 +220,7 @@
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up delay-100 hover-lift hover-glow transition-all">
                         <div class="flex justify-between items-center mb-4">
                             <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-xl flex items-center justify-center shimmer">
-                                <i data-lucide="clock"></i>
+                                <i data-lucide="clock" class="w-6 h-6"></i>
                             </div>
                             <span class="text-xs font-bold text-red-500 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-lg">-2%</span>
                         </div>
@@ -226,7 +230,7 @@
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up delay-200 hover-lift hover-glow transition-all">
                         <div class="flex justify-between items-center mb-4">
                             <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-xl flex items-center justify-center shimmer">
-                                <i data-lucide="mouse-pointer-2"></i>
+                                <i data-lucide="mouse-pointer-2" class="w-6 h-6"></i>
                             </div>
                             <span class="text-xs font-bold text-green-500 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-lg">+5%</span>
                         </div>
@@ -236,7 +240,7 @@
                     <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up delay-300 hover-lift hover-glow transition-all">
                         <div class="flex justify-between items-center mb-4">
                             <div class="w-10 h-10 bg-pink-100 dark:bg-pink-900/30 text-pink-600 rounded-xl flex items-center justify-center shimmer">
-                                <i data-lucide="alert-circle"></i>
+                                <i data-lucide="alert-circle" class="w-6 h-6"></i>
                             </div>
                             <span class="text-xs font-bold text-red-500 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-lg animate-pulse">+12%</span>
                         </div>
@@ -614,7 +618,7 @@
                             <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
                                 <h4 class="font-bold mb-4">Drop-off Insights</h4>
                                 <div class="p-4 bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800/30 rounded-2xl flex gap-3">
-                                    <i data-lucide="alert-triangle" class="text-orange-500"></i>
+                                    <i data-lucide="alert-triangle" class="text-orange-500 w-5 h-5 flex-shrink-0"></i>
                                     <p class="text-xs text-orange-700 dark:text-orange-400">Pricing page bounce rate is 15% higher on Firefox. Check for rendering issues.</p>
                                 </div>
                             </div>
@@ -649,7 +653,7 @@
                         </div>
                         <div class="md:col-span-2 lg:col-span-1 bg-slate-50 dark:bg-slate-900 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-[2.5rem] flex flex-col items-center justify-center p-8 text-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer group md:max-w-md md:mx-auto lg:max-w-none lg:mx-0">
                             <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform">
-                                <i data-lucide="plus" class="text-primary-600"></i>
+                                <i data-lucide="plus" class="text-primary-600 w-6 h-6"></i>
                             </div>
                             <p class="font-bold text-sm">Add New Page</p>
                             <p class="text-xs text-slate-500 mt-1">Start tracking clicks on a new URL</p>
@@ -749,15 +753,12 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Dashboard Footer -->
                 <footer class="pt-10 pb-6 border-t border-slate-200 dark:border-slate-800 text-center text-slate-400 text-xs mt-6">
                 </footer>
             </main>
         </div>
     </div>
-
-
 
     <script src="js/main.js"></script>
     <script>
@@ -770,35 +771,9 @@
             const headerTitle = document.querySelector('header h2 span');
             const sidebar = document.querySelector('.sidebar');
             const overlay = document.getElementById('sidebar-overlay');
-            const sidebarToggle = document.getElementById('sidebar-toggle');
-            const sidebarClose = document.getElementById('sidebar-close');
-
-            // Sidebar Toggle Logic
-            if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', () => {
-                    if (sidebar) sidebar.classList.add('active');
-                    if (overlay) overlay.classList.remove('hidden');
-                });
-            }
-
-            if (sidebarClose) {
-                sidebarClose.addEventListener('click', () => {
-                    if (sidebar) sidebar.classList.remove('active');
-                    if (overlay) overlay.classList.add('hidden');
-                });
-            }
-
-            if (overlay) {
-                overlay.addEventListener('click', () => {
-                    if (sidebar) sidebar.classList.remove('active');
-                    if (overlay) overlay.classList.add('hidden');
-                });
-            }
-
-            // Section switching listeners
-            const htmlElement = document.documentElement;
 
             function updateThemeIcons() {
+                const htmlElement = document.documentElement;
                 const sunIcons = document.querySelectorAll('.sun-icon');
                 const moonIcons = document.querySelectorAll('.moon-icon');
                 const isDark = htmlElement.classList.contains('dark');
@@ -808,29 +783,30 @@
             }
 
             function switchSection(sectionId) {
-                // Remove active class from all sections and hide them
+                // Remove active class from all sections
                 sections.forEach(section => {
                     section.classList.remove('active-section');
+                    section.style.display = 'none';
                 });
 
-                // Small delay to let opacity fade before display:none
-                setTimeout(() => {
-                    // Show selected section
-                    const targetSection = document.getElementById(`${sectionId}-section`);
-                    if (targetSection) {
+                // Show selected section
+                const targetSection = document.getElementById(`${sectionId}-section`);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    setTimeout(() => {
                         targetSection.classList.add('active-section');
-                    }
+                    }, 10);
+                }
 
-                    // Update Header Title
-                    if (headerTitle) {
-                        const link = document.querySelector(`[data-section="${sectionId}"]`);
-                        if (link) {
-                            headerTitle.textContent = link.textContent.trim();
-                        }
+                // Update Header Title
+                if (headerTitle) {
+                    const link = document.querySelector(`[data-section="${sectionId}"]`);
+                    if (link) {
+                        headerTitle.textContent = link.textContent.trim();
                     }
-                }, 50);
+                }
 
-                // Update Active Link State immediately
+                // Update Active Link State
                 navLinks.forEach(l => {
                     l.classList.remove('bg-primary-50', 'dark:bg-primary-900/30', 'text-primary-600', 'font-bold', 'active');
                     l.classList.add('text-slate-500');
@@ -845,9 +821,15 @@
                 // Re-render icons
                 if (window.lucide) lucide.createIcons();
 
-                // Close sidebar on mobile
+                // Close sidebar on mobile/tablet after switching
+                if (window.innerWidth < 1024) {
+                    if (sidebar) sidebar.classList.remove('active');
+                    if (overlay) overlay.classList.add('hidden');
                 }
             }
+            
+            // Make globally available
+            window.switchSection = switchSection;
 
             // Settings Toggles Logic
             const toggles = document.querySelectorAll('.setting-toggle');
@@ -880,8 +862,6 @@
                     if (sectionId) switchSection(sectionId);
                 });
             });
-
-
 
             // Initialize
             updateThemeIcons();
