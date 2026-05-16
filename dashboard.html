@@ -352,49 +352,267 @@
 
                 <!-- Session Replays Section -->
                 <div id="session-section" class="dashboard-section hidden space-y-6">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
-                        <div class="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="play-circle" class="w-10 h-10"></i>
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="flex-1 space-y-6">
+                            <!-- Filter Bar -->
+                            <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-wrap gap-4 items-center justify-between">
+                                <div class="flex gap-4">
+                                    <div class="relative">
+                                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+                                        <input type="text" placeholder="Search User ID..." class="pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm border-none focus:ring-2 focus:ring-primary-500">
+                                    </div>
+                                    <select class="bg-slate-50 dark:bg-slate-800 text-sm px-4 py-2 rounded-xl border-none outline-none">
+                                        <option>All Devices</option>
+                                        <option>Desktop Only</option>
+                                        <option>Mobile Only</option>
+                                    </select>
+                                </div>
+                                <button class="bg-primary-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-primary-700 transition-all">Export CSV</button>
+                            </div>
+
+                            <!-- Sessions Table -->
+                            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs uppercase tracking-widest font-bold">
+                                            <th class="px-6 py-4">User</th>
+                                            <th class="px-6 py-4">Session Duration</th>
+                                            <th class="px-6 py-4">Events</th>
+                                            <th class="px-6 py-4">Device</th>
+                                            <th class="px-6 py-4 text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-all group">
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 flex items-center justify-center font-bold text-xs">AS</div>
+                                                    <div>
+                                                        <p class="text-sm font-bold">User #8429</p>
+                                                        <p class="text-[10px] text-slate-400">2 mins ago • San Francisco, US</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 text-sm">12m 45s</td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex gap-1">
+                                                    <span class="px-2 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold">Rage Click</span>
+                                                    <span class="px-2 py-0.5 bg-green-100 text-green-600 rounded text-[10px] font-bold">Converted</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4"><i data-lucide="monitor" class="w-4 h-4 text-slate-400"></i></td>
+                                            <td class="px-6 py-4 text-right">
+                                                <button class="p-2 bg-primary-600 text-white rounded-lg hover:scale-110 transition-transform"><i data-lucide="play" class="w-4 h-4"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-all group">
+                                            <td class="px-6 py-4">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center font-bold text-xs">MK</div>
+                                                    <div>
+                                                        <p class="text-sm font-bold">User #8425</p>
+                                                        <p class="text-[10px] text-slate-400">15 mins ago • London, UK</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 text-sm">5m 12s</td>
+                                            <td class="px-6 py-4">
+                                                <div class="flex gap-1">
+                                                    <span class="px-2 py-0.5 bg-blue-100 text-blue-600 rounded text-[10px] font-bold">Checkout Start</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4"><i data-lucide="smartphone" class="w-4 h-4 text-slate-400"></i></td>
+                                            <td class="px-6 py-4 text-right">
+                                                <button class="p-2 bg-primary-600 text-white rounded-lg hover:scale-110 transition-transform"><i data-lucide="play" class="w-4 h-4"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Session Replays</h3>
-                        <p class="text-slate-500 max-w-md mx-auto mb-8">Watch real users interact with your product. Filter by rage clicks, drop-offs, or custom events.</p>
-                        <button class="bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-all">Launch Player</button>
+
+                        <!-- Side Metrics -->
+                        <div class="lg:w-80 space-y-6">
+                            <div class="bg-slate-900 text-white p-6 rounded-3xl shadow-xl relative overflow-hidden h-full flex flex-col justify-between">
+                                <div class="absolute inset-0 bg-mesh opacity-10"></div>
+                                <div class="relative z-10">
+                                    <h4 class="font-bold mb-6">Live Stream</h4>
+                                    <div class="flex items-center gap-3 mb-8">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+                                        <span class="text-sm font-medium">14 Users currently active</span>
+                                    </div>
+                                    <p class="text-xs text-slate-400 mb-8 leading-relaxed">Watching real-time sessions helps you identify immediate UI friction during high-traffic launches.</p>
+                                    <button class="w-full py-3 bg-white/10 hover:bg-white/20 border border-white/10 rounded-xl font-bold transition-all">Go Live</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Funnels Section -->
                 <div id="funnels-section" class="dashboard-section hidden space-y-6">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
-                        <div class="w-20 h-20 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="filter" class="w-10 h-10"></i>
+                    <div class="grid lg:grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+                            <h3 class="text-xl font-bold mb-8">User Acquisition Funnel</h3>
+                            <div class="space-y-12 relative">
+                                <!-- Funnel Step 1 -->
+                                <div class="relative z-10 flex items-center gap-6">
+                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center font-bold">1</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-end mb-2">
+                                            <span class="font-bold text-sm">Landing Page Visit</span>
+                                            <span class="text-xs text-slate-500">12,450 (100%)</span>
+                                        </div>
+                                        <div class="h-3 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary-600 w-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Funnel Step 2 -->
+                                <div class="relative z-10 flex items-center gap-6">
+                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center font-bold">2</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-end mb-2">
+                                            <span class="font-bold text-sm">Viewed Pricing</span>
+                                            <span class="text-xs text-slate-500">8,120 (65.2%)</span>
+                                        </div>
+                                        <div class="h-3 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary-600 w-[65%]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Funnel Step 3 -->
+                                <div class="relative z-10 flex items-center gap-6">
+                                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center font-bold">3</div>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-end mb-2">
+                                            <span class="font-bold text-sm">Started Signup</span>
+                                            <span class="text-xs text-slate-500">2,410 (19.3%)</span>
+                                        </div>
+                                        <div class="h-3 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary-600 w-[19%]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Connect Lines -->
+                                <div class="absolute left-6 top-6 bottom-6 w-0.5 bg-slate-100 dark:bg-slate-800 -z-0"></div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Conversion Funnels</h3>
-                        <p class="text-slate-500 max-w-md mx-auto mb-8">Identify where your users are dropping off in the conversion process.</p>
-                        <button class="bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-all">Create New Funnel</button>
+
+                        <div class="space-y-6">
+                            <div class="bg-primary-600 p-8 rounded-3xl text-white">
+                                <h4 class="font-bold mb-2">Overall Conversion</h4>
+                                <div class="text-6xl font-bold mb-4">12.4%</div>
+                                <p class="text-white/70 text-sm">Industry average: 2.1% • You are performing <span class="font-bold">better than 94%</span> of similar SaaS platforms.</p>
+                            </div>
+                            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+                                <h4 class="font-bold mb-4">Drop-off Insights</h4>
+                                <div class="p-4 bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800/30 rounded-2xl flex gap-3">
+                                    <i data-lucide="alert-triangle" class="text-orange-500"></i>
+                                    <p class="text-xs text-orange-700 dark:text-orange-400">Pricing page bounce rate is 15% higher on Firefox. Check for rendering issues.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Heatmaps Section -->
                 <div id="heatmaps-section" class="dashboard-section hidden space-y-6">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
-                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="layers" class="w-10 h-10"></i>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="glass-card rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-slate-800 group hover-lift">
+                            <div class="h-48 relative overflow-hidden">
+                                <img src="assets/heatmap_sample_ui_1778906219922.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <div class="absolute inset-0 bg-primary-600/10 group-hover:bg-transparent transition-all"></div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold mb-1">Homepage (Default)</h4>
+                                <p class="text-[10px] text-slate-400 mb-4 uppercase tracking-widest font-bold">Updated 5 mins ago</p>
+                                <button class="w-full py-3 bg-primary-600 text-white rounded-xl text-sm font-bold shadow-lg shadow-primary-500/20">View Analytics</button>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Click & Scroll Heatmaps</h3>
-                        <p class="text-slate-500 max-w-md mx-auto mb-8">Visualize user engagement and find high-value interaction zones.</p>
-                        <button class="bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-all">Generate Heatmap</button>
+                        <div class="glass-card rounded-[2.5rem] overflow-hidden border border-slate-200 dark:border-slate-800 group hover-lift">
+                            <div class="h-48 relative overflow-hidden">
+                                <img src="assets/analytics_dashboard_hero_1778906202073.png" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                                <div class="absolute inset-0 bg-primary-600/10 group-hover:bg-transparent transition-all"></div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold mb-1">Pricing Page</h4>
+                                <p class="text-[10px] text-slate-400 mb-4 uppercase tracking-widest font-bold">Updated 1 hour ago</p>
+                                <button class="w-full py-3 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-bold">Generate New</button>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-900 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-[2.5rem] flex flex-col items-center justify-center p-8 text-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer group">
+                            <div class="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform">
+                                <i data-lucide="plus" class="text-primary-600"></i>
+                            </div>
+                            <p class="font-bold text-sm">Add New Page</p>
+                            <p class="text-xs text-slate-500 mt-1">Start tracking clicks on a new URL</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Rage Clicks Section -->
                 <div id="rage-section" class="dashboard-section hidden space-y-6">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
-                        <div class="w-20 h-20 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="mouse-pointer-click" class="w-10 h-10"></i>
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+                                <h3 class="text-xl font-bold mb-8">Rage Click Trends</h3>
+                                <div class="grid grid-cols-12 gap-2 h-40 items-end mb-8">
+                                    <div class="col-span-1 h-[20%] bg-red-400/20 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[35%] bg-red-400/40 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[15%] bg-red-400/20 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[60%] bg-red-400/60 rounded-t-lg animate-pulse"></div>
+                                    <div class="col-span-1 h-[85%] bg-red-500 rounded-t-lg animate-pulse"></div>
+                                    <div class="col-span-1 h-[40%] bg-red-400/40 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[25%] bg-red-400/20 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[10%] bg-red-400/10 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[30%] bg-red-400/30 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[55%] bg-red-400/50 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[70%] bg-red-400/70 rounded-t-lg"></div>
+                                    <div class="col-span-1 h-[45%] bg-red-400/40 rounded-t-lg"></div>
+                                </div>
+                                <div class="flex justify-between text-[10px] text-slate-400 uppercase font-bold tracking-widest">
+                                    <span>Last 12 Hours</span>
+                                    <span>Now</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+                                <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+                                    <h4 class="font-bold">Affected Elements</h4>
+                                </div>
+                                <div class="divide-y divide-slate-100 dark:divide-slate-800">
+                                    <div class="p-6 flex items-center justify-between">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-10 h-10 bg-red-50 dark:bg-red-900/10 text-red-600 rounded-xl flex items-center justify-center font-bold">#1</div>
+                                            <div>
+                                                <p class="font-bold text-sm">button.btn-checkout-next</p>
+                                                <p class="text-xs text-slate-500">Checkout Flow • 84 incidents</p>
+                                            </div>
+                                        </div>
+                                        <button class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-bold hover:bg-red-500 hover:text-white transition-all">Watch Sessions</button>
+                                    </div>
+                                    <div class="p-6 flex items-center justify-between">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-10 h-10 bg-red-50 dark:bg-red-900/10 text-red-600 rounded-xl flex items-center justify-center font-bold">#2</div>
+                                            <div>
+                                                <p class="font-bold text-sm">input#promo-code-apply</p>
+                                                <p class="text-xs text-slate-500">Pricing Page • 52 incidents</p>
+                                            </div>
+                                        </div>
+                                        <button class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-xs font-bold hover:bg-red-500 hover:text-white transition-all">Watch Sessions</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4">Rage Click Analysis</h3>
-                        <p class="text-red-500/80 max-w-md mx-auto mb-8">Direct links to sessions where users clicked repeatedly on non-interactive elements.</p>
-                        <button class="bg-red-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-red-700 transition-all">View Alerts</button>
+
+                        <div class="space-y-6">
+                            <div class="bg-red-600 p-8 rounded-3xl text-white shadow-xl shadow-red-500/20">
+                                <h4 class="font-bold mb-6">Impact Score</h4>
+                                <div class="text-6xl font-bold mb-4">High</div>
+                                <p class="text-white/70 text-sm">Rage clicks are affecting <span class="font-bold">8.2%</span> of your total mobile traffic. Estimated revenue loss: <span class="font-bold">$2,400/mo</span>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -428,7 +646,6 @@
 
                 <!-- Dashboard Footer -->
                 <footer class="pt-10 pb-6 border-t border-slate-200 dark:border-slate-800 text-center text-slate-400 text-xs mt-6">
-                    <p>© 2026 InsightFlow Analytics Dashboard. Data updated 2 minutes ago.</p>
                 </footer>
             </main>
         </div>
