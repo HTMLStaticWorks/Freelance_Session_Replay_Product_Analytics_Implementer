@@ -34,7 +34,7 @@
     
     <!-- Navbar (Identical) -->
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <a href="index.html" class="flex-shrink-0 flex items-center gap-2 group">
                     <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
@@ -42,7 +42,7 @@
                     </div>
                     <span class="text-2xl font-bold tracking-tight font-heading">Insight<span class="gradient-text">Analytics</span></span>
                 </a>
-                <div class="hidden lg:flex items-center lg:space-x-0 xl:space-x-1">
+                <div class="hidden lg:flex items-center lg:gap-0 xl:gap-1">
                     <a href="index.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Home1</a>
                     <a href="home2.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Home2</a>
                     <a href="about.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">About</a>
@@ -52,28 +52,21 @@
                     <a href="dashboard.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Dashboard</a>
                     <a href="contact.html" class="lg:px-2 xl:px-3 py-2 lg:text-[13px] xl:text-sm font-medium hover:text-primary-500 transition-colors">Contact</a>
                 </div>
-                <div class="hidden lg:flex items-center lg:space-x-3 xl:space-x-6">
-                    <div class="flex items-center lg:space-x-2 xl:space-x-4 border-e border-slate-200 dark:border-slate-800 lg:pe-3 xl:pe-6">
+                <div class="hidden lg:flex items-center lg:gap-3 xl:gap-6">
+                    <div class="flex items-center lg:gap-2 xl:gap-4 border-e border-slate-200 dark:border-slate-800 lg:pe-3 xl:pe-6">
                         <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                             <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
                             <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
                         </button>
                         <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                            <i data-lucide="languages" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         </button>
                     </div>
                     <a href="login.html" class="bg-primary-600 hover:bg-primary-700 text-white lg:px-4 xl:px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary-500/25">Login</a>
                 </div>
-                <div class="lg:hidden flex items-center space-x-2">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
-                        <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
-                    </button>
-                    <button id="rtl-toggle-mobile" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="languages" class="w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 -mr-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
                     </button>
                 </div>
             </div>
@@ -87,9 +80,22 @@
             <a href="blog.html" class="block px-4 py-2 rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-600">Blog</a>
             <a href="dashboard.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
             <a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
-            <hr class="border-slate-200 dark:border-slate-800">
-            <div class="flex items-center justify-center px-4 py-2">
-                <a href="login.html" class="w-full text-center bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold">Login</a>
+            <hr class="border-slate-200 dark:border-slate-800 my-2">
+            <div class="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
+                <span class="text-sm font-medium">Appearance</span>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
+                        <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
+                    </button>
+                    <button id="rtl-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <hr class="border-slate-200 dark:border-slate-800 my-2">
+            <div class="flex items-center justify-center px-2 py-2">
+                <a href="login.html" class="w-full text-center bg-primary-600 text-white px-4 py-3 rounded-xl font-bold">Login</a>
             </div>
         </div>
     </nav>
@@ -97,23 +103,20 @@
     <!-- Main Content -->
     <main class="pt-20">
         <!-- Section 1: Hero Section -->
-        <section class="py-24 relative overflow-hidden bg-mesh">
+        <section class="py-32 relative overflow-hidden bg-mesh border-b border-slate-100 dark:border-slate-800">
             <div class="blob top-0 left-0 bg-primary-600/10 animate-pulse"></div>
             <div class="blob bottom-0 right-0 bg-accent/10" style="animation-delay: -5s;"></div>
             <div class="max-w-4xl mx-auto px-4 text-center reveal-up">
                 <h1 class="text-5xl lg:text-7xl font-bold font-heading mb-6">Product <span class="gradient-text">Insights Blog</span></h1>
-                <p class="text-xl text-slate-600 dark:text-slate-400">Weekly strategies on session replays, funnel optimization, and data-driven product growth.</p>
-            </div>
-        </section>
-
-        <!-- Search Bar Section -->
-        <section class="py-8 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-center -mt-20 relative z-20">
-                    <div class="relative w-full max-w-2xl hover-lift transition-transform">
+                <p class="text-xl text-slate-600 dark:text-slate-400 mb-10">Weekly strategies on session replays, funnel optimization, and data-driven product growth.</p>
+                
+                <!-- Search Bar Integrated into Hero -->
+                <div class="relative w-full max-w-2xl mx-auto hover-lift transition-all">
+                    <div class="absolute inset-0 bg-primary-500/20 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative">
                         <input type="text" placeholder="Search articles..." class="w-full px-8 py-5 rounded-full bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary-500 outline-none text-lg">
-                        <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-primary-600 text-white p-3 rounded-full hover:bg-primary-700 transition-all shadow-lg">
-                            <i data-lucide="search" class="w-6 h-6"></i>
+                        <button class="absolute right-3 top-1/2 -translate-y-1/2 bg-primary-600 text-white p-4 rounded-full hover:bg-primary-700 transition-all shadow-lg flex items-center justify-center">
+                            <i data-lucide="search" class="w-5 h-5"></i>
                         </button>
                     </div>
                 </div>
@@ -127,7 +130,7 @@
                     <!-- Article 1 -->
                     <article class="glass-card rounded-3xl overflow-hidden reveal-scale hover-lift hover-glow">
                         <div class="overflow-hidden h-48">
-                            <img src="assets/heatmap_sample_ui_1778906219922.png" alt="Article 1" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                            <img src="assets/heatmap_main.png" alt="Article 1" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 text-xs text-primary-600 font-bold uppercase mb-4 animate-pulse">
@@ -144,7 +147,7 @@
                     <!-- Article 2 -->
                     <article class="glass-card rounded-3xl overflow-hidden reveal-scale delay-200 hover-lift hover-glow">
                         <div class="overflow-hidden h-48">
-                            <img src="assets/ux_research_visuals_ui_1778908763790.png" alt="UX Research Best Practices" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                            <img src="assets/ux_research_visuals_ui_1778908763790.png" alt="UX Research Best Practices" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 text-xs text-primary-600 font-bold uppercase mb-4 animate-pulse">
@@ -161,7 +164,7 @@
                     <!-- Article 3 -->
                     <article class="glass-card rounded-3xl overflow-hidden reveal-scale delay-400 hover-lift hover-glow">
                         <div class="overflow-hidden h-48">
-                            <img src="assets/retention_report_dashboard_ui_1778908782845.png" alt="Retention Data Modeling" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                            <img src="assets/retention_report_dashboard_ui_1778908782845.png" alt="Retention Data Modeling" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 text-xs text-primary-600 font-bold uppercase mb-4 animate-pulse">
@@ -217,7 +220,7 @@
                 <div class="space-y-8">
                     <div class="glass-card p-8 rounded-3xl flex flex-col md:flex-row gap-8 items-center reveal-left hover-lift hover-glow transition-all">
                         <div class="w-full md:w-1/3 overflow-hidden rounded-2xl">
-                            <img src="assets/funnel_visualization_ui_1778906235562.png" alt="Funnel Strategy" class="rounded-2xl shadow-lg w-full h-48 object-cover transition-transform duration-700 hover:scale-110" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                            <img src="assets/funnel_main.png" alt="Funnel Strategy" class="rounded-2xl shadow-lg w-full h-48 object-cover transition-transform duration-700 hover:scale-110" loading="lazy">
                         </div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold mb-4">The "Abandoned Cart" Myth in B2B SaaS</h3>
@@ -227,7 +230,7 @@
                     </div>
                     <div class="glass-card p-8 rounded-3xl flex flex-col md:flex-row-reverse gap-8 items-center reveal-right delay-200 hover-lift hover-glow transition-all">
                         <div class="w-full md:w-1/3 overflow-hidden rounded-2xl">
-                            <img src="assets/blog_featured_article_ui_1778906498501.png" alt="Dashboard Strategy" class="rounded-2xl shadow-lg w-full h-48 object-cover transition-transform duration-700 hover:scale-110" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                            <img src="assets/feature_privacy.png" alt="Dashboard Strategy" class="rounded-2xl shadow-lg w-full h-48 object-cover transition-transform duration-700 hover:scale-110" loading="lazy">
                         </div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold mb-4">Designing Dashboards for Executive Buy-in</h3>
@@ -238,26 +241,36 @@
                 </div>
             </div>
         </section>
-    </main>
-
+        
         <!-- Section: Newsletter -->
         <section class="py-24 relative overflow-hidden">
-            <div class="max-w-5xl mx-auto px-4">
-                <div class="newsletter-card p-12 rounded-[3rem] text-center relative z-10">
-                    <h2 class="text-3xl lg:text-5xl font-bold font-heading mb-6">Stay Ahead of the <span class="gradient-text">Curve</span></h2>
-                    <p class="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-lg">
-                        Get the latest session replay strategies, funnel optimization tips, and product analytics insights delivered straight to your inbox.
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="bg-primary-600 p-12 lg:p-20 rounded-[3rem] text-center relative z-10 text-white shadow-2xl shadow-primary-500/30 reveal-scale">
+                    <h2 class="text-4xl lg:text-6xl font-bold font-heading mb-6">Quick UX Analytics Tips</h2>
+                    <p class="text-white/80 mb-12 max-w-2xl mx-auto text-lg lg:text-xl">
+                        Subscribe to get bite-sized product insights and implementation hacks delivered to your inbox twice a week.
                     </p>
-                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                        <input type="email" placeholder="Enter your work email" class="flex-1 px-6 py-4 rounded-full outline-none focus:ring-2 focus:ring-primary-500 newsletter-input transition-all" required>
-                        <button type="submit" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold transition-all shadow-lg shadow-primary-500/25 whitespace-nowrap hover-lift hover:shadow-primary-500/40 active:scale-95">
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto mb-16">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-8 py-5 rounded-2xl bg-white/10 border border-white/20 outline-none focus:ring-2 focus:ring-white/50 text-white placeholder:text-white/40 backdrop-blur-sm transition-all text-lg" required>
+                        <button type="submit" class="px-10 py-5 bg-white text-primary-600 rounded-2xl font-bold transition-all shadow-xl whitespace-nowrap hover:bg-slate-100 hover-lift text-lg">
                             Subscribe Now
                         </button>
                     </form>
-                    <p class="text-xs text-slate-500 mt-6">No spam. Only high-value insights. Unsubscribe at any time.</p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 text-center hover:bg-white/15 transition-all">
+                            <p class="text-xs font-bold uppercase tracking-widest mb-2 text-white/60">Tip #0</p>
+                            <p class="text-sm leading-relaxed">Always mask credit card CVV fields at the SDK level to prevent PII leaks.</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/10 text-center hover:bg-white/15 transition-all">
+                            <p class="text-xs font-bold uppercase tracking-widest mb-2 text-white/60">Tip #0</p>
+                            <p class="text-sm leading-relaxed">Use 'Dead Click' detection to find broken links that users expect to be interactive.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10">
@@ -273,15 +286,15 @@
                     <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
                         Helping SaaS companies understand their users through advanced session recording and product analytics implementation.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group hover-lift shadow-sm">
-                            <i data-lucide="twitter" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
                         </a>
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group hover-lift shadow-sm">
-                            <i data-lucide="linkedin" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
                         <a href="#" class="w-10 h-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group hover-lift shadow-sm">
-                            <i data-lucide="github" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-700 dark:text-slate-200 group-hover:text-white transition-colors"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -314,12 +327,12 @@
                     </form>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-                <p>&copy; 2024 InsightAnalytics. All rights reserved.</p>
-                <div class="flex gap-8">
-                    <a href="#" class="hover:text-primary-500 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary-500 transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-primary-500 transition-colors">Cookies Settings</a>
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
+                <p class="text-center md:text-left">&copy; 2026 InsightAnalytics. All rights reserved.</p>
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2">
+                    <a href="#" class="hover:text-primary-500 transition-colors whitespace-nowrap">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary-500 transition-colors whitespace-nowrap">Terms of Service</a>
+                    <a href="#" class="hover:text-primary-500 transition-colors whitespace-nowrap">Cookies Settings</a>
                 </div>
             </div>
         </div>
