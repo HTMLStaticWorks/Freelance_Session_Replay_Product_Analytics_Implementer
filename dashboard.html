@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | InsightAnalytics</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'></polyline></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
+                            400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
+                            800: '#5b21b6', 900: '#4c1d95', 950: '#2e1065',
+                        },
+                        secondary: '#64748B',
+                        accent: '#FBCFE8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .dashboard-section {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
+        }
+        .dashboard-section.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .dashboard-section.active-section {
+            display: block !important;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-hidden">
+    
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 lg:static lg:block">
+            <div class="flex flex-col h-full p-6">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <span class="text-xl font-bold font-heading">Insight<span class="gradient-text">Analytics</span></span>
+                </div>
+
+                <!-- Nav Links -->
+                <nav class="flex-1 space-y-1">
+                    <a href="#" data-section="overview" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl bg-primary-50 dark:bg-primary-900/30 text-primary-600 font-bold active">
+                        <i data-lucide="layout-dashboard"></i> Overview
+                    </a>
+                    <a href="#" data-section="session" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="play-circle"></i> Session Replays
+                    </a>
+                    <a href="#" data-section="funnels" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="filter"></i> Funnels
+                    </a>
+                    <a href="#" data-section="heatmaps" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="layers"></i> Heatmaps
+                    </a>
+                    <a href="#" data-section="rage" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="mouse-pointer-click"></i> Rage Clicks
+                    </a>
+                    <a href="#" data-section="settings" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="settings"></i> Settings
+                    </a>
+                </nav>
+
+                <!-- User Profile -->
+                <div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+                    <div class="flex items-center gap-3 px-4 py-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center font-bold text-primary-600">JD</div>
+                        <div class="min-w-0">
+                            <p class="text-sm font-bold truncate">John Doe</p>
+                            <p class="text-xs text-slate-500">Pro Account</p>
+                        </div>
+                    </div>
+                    <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-red-500 text-sm font-medium hover:bg-red-50 dark:hover:bg-red-900/10 rounded-xl mt-2 transition-all group">
+                        <i data-lucide="log-out" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Sidebar Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-slate-950/50 z-40 hidden lg:hidden backdrop-blur-sm"></div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+            <!-- Header -->
+            <header class="h-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6">
+                <div class="flex items-center gap-4">
+                    <button id="sidebar-toggle" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <h2 class="text-xl font-bold font-heading">Analytics <span class="text-slate-500">Overview</span></h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                        <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
+                        <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
+                    </button>
+                    <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 relative">
+                        <i data-lucide="bell" class="w-5 h-5"></i>
+                        <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+                    </button>
+                    <div class="hidden sm:block">
+                        <select class="bg-slate-100 dark:bg-slate-800 text-sm px-4 py-2 rounded-xl outline-none">
+                            <option>Streamly Production</option>
+                            <option>Streamly Staging</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Scroll -->
+            <main class="flex-1 overflow-y-auto p-6">
+                
+                <!-- Overview Section -->
+                <div id="overview-section" class="dashboard-section active-section space-y-6">
+                
+                <!-- Section 1: Dashboard Hero/Header -->
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 bg-primary-600 rounded-3xl p-8 text-white relative overflow-hidden reveal-left hover-lift">
+                        <div class="absolute right-0 bottom-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mb-32 animate-pulse"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-3xl font-bold font-heading mb-4">Welcome back, John!</h3>
+                            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                                <div>
+                                    <p class="text-white/80 max-w-md mb-8">Your product engagement is up by 12.4% this week. We've detected 3 new friction points in the checkout flow.</p>
+                                    <button class="bg-white text-primary-600 px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-slate-100 transition-all glow-pulse">View Reports</button>
+                                </div>
+                                <div class="hidden md:block w-full max-w-xs">
+                                    <div class="float-element">
+                                        <img src="assets/analytics_dashboard_hero_1778906202073.png" alt="Dashboard Preview" class="rounded-2xl shadow-2xl border border-white/20" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 reveal-right hover-lift hover-glow">
+                        <h4 class="font-bold mb-6 shimmer inline-block">Real-time Users</h4>
+                        <div class="text-5xl font-bold mb-2"><span class="counter" data-target="1284">0</span></div>
+                        <p class="text-green-500 text-sm flex items-center"><i data-lucide="trending-up" class="w-4 h-4 mr-1 animate-bounce"></i> +8.2% from last hour</p>
+                        <div class="mt-8 flex items-end gap-1 h-12">
+                            <div class="flex-1 bg-primary-500 h-1/2 rounded animate-pulse"></div>
+                            <div class="flex-1 bg-primary-500 h-2/3 rounded animate-pulse" style="animation-delay: 0.1s;"></div>
+                            <div class="flex-1 bg-primary-500 h-full rounded animate-pulse" style="animation-delay: 0.2s;"></div>
+                            <div class="flex-1 bg-primary-500 h-3/4 rounded animate-pulse" style="animation-delay: 0.3s;"></div>
+                            <div class="flex-1 bg-primary-500 h-5/6 rounded animate-pulse" style="animation-delay: 0.4s;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Analytics Overview Cards -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up hover-lift hover-glow transition-all">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-xl flex items-center justify-center shimmer">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <span class="text-xs font-bold text-green-500 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-lg">+14%</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-1">Total Sessions</p>
+                        <p class="text-2xl font-bold"><span class="counter" data-target="42891">0</span></p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up delay-100 hover-lift hover-glow transition-all">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-xl flex items-center justify-center shimmer">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <span class="text-xs font-bold text-red-500 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-lg">-2%</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-1">Avg. Session Time</p>
+                        <p class="text-2xl font-bold">3m 45s</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up delay-200 hover-lift hover-glow transition-all">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-xl flex items-center justify-center shimmer">
+                                <i data-lucide="mouse-pointer-2"></i>
+                            </div>
+                            <span class="text-xs font-bold text-green-500 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-lg">+5%</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-1">Click Accuracy</p>
+                        <p class="text-2xl font-bold">98.2%</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 reveal-up delay-300 hover-lift hover-glow transition-all">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="w-10 h-10 bg-pink-100 dark:bg-pink-900/30 text-pink-600 rounded-xl flex items-center justify-center shimmer">
+                                <i data-lucide="alert-circle"></i>
+                            </div>
+                            <span class="text-xs font-bold text-red-500 bg-red-100 dark:bg-red-900/30 px-2 py-1 rounded-lg animate-pulse">+12%</span>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-1">Rage Clicks</p>
+                        <p class="text-2xl font-bold text-red-500"><span class="counter" data-target="242">0</span></p>
+                    </div>
+                </div>
+
+                <!-- Section 3: Session Replay & Funnel Submission Section -->
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal-left hover-glow">
+                        <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+                            <h4 class="font-bold shimmer inline-block">Recent Session Replays</h4>
+                            <a href="#" class="text-xs text-primary-600 font-bold hover:underline">View All</a>
+                        </div>
+                        <div class="divide-y divide-slate-100 dark:divide-slate-800">
+                            <div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all hover:pl-6 group">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                                    <div>
+                                        <p class="text-sm font-bold">User #8429</p>
+                                        <p class="text-xs text-slate-500">Chrome • MacOS • United States</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-xs text-slate-400">4m 20s</span>
+                                    <button class="p-2 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="play" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                            <div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all hover:pl-6 group">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                                    <div>
+                                        <p class="text-sm font-bold">User #8427</p>
+                                        <p class="text-xs text-slate-500">Safari • iOS • United Kingdom</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-xs text-slate-400">12m 45s</span>
+                                    <button class="p-2 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="play" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                            <div class="p-4 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all hover:pl-6 group">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                                    <div>
+                                        <p class="text-sm font-bold">User #8425</p>
+                                        <p class="text-xs text-slate-500">Firefox • Windows • Germany</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <span class="text-xs text-slate-400">1m 12s</span>
+                                    <button class="p-2 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-lg group-hover:scale-110 transition-transform"><i data-lucide="play" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 reveal-right hover-glow">
+                        <h4 class="font-bold mb-6 shimmer inline-block">Checkout Funnel Completion</h4>
+                        <div class="space-y-6">
+                            <div class="hover-lift transition-transform">
+                                <div class="flex justify-between text-xs mb-2">
+                                    <span class="text-slate-500">Cart Added</span>
+                                    <span class="font-bold">100% (4,200)</span>
+                                </div>
+                                <div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary-500 progress-bar-animate" data-width="100" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="hover-lift transition-transform">
+                                <div class="flex justify-between text-xs mb-2">
+                                    <span class="text-slate-500">Shipping Info</span>
+                                    <span class="font-bold text-orange-500">64% (2,688)</span>
+                                </div>
+                                <div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary-500 progress-bar-animate" data-width="64" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="hover-lift transition-transform">
+                                <div class="flex justify-between text-xs mb-2">
+                                    <span class="text-slate-500">Payment</span>
+                                    <span class="font-bold text-red-500">42% (1,764)</span>
+                                </div>
+                                <div class="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary-500 progress-bar-animate" data-width="42" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-4 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-2xl flex items-start gap-3 animate-pulse">
+                            <i data-lucide="alert-triangle" class="text-red-500 w-5 h-5 flex-shrink-0"></i>
+                            <p class="text-xs text-red-600 dark:text-red-400">Significant drop-off detected at 'Payment' step. Session recordings show silent validation errors on mobile Safari.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Heatmaps, Rage Click & Engagement Charts Section -->
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 reveal-up hover-glow transition-all">
+                        <div class="flex justify-between items-center mb-8">
+                            <h4 class="font-bold shimmer inline-block">Engagement Heatmap Over Time</h4>
+                            <div class="flex gap-2">
+                                <button class="px-3 py-1 text-xs bg-slate-100 dark:bg-slate-800 rounded-lg hover-lift transition-transform">Day</button>
+                                <button class="px-3 py-1 text-xs bg-primary-600 text-white rounded-lg hover-lift transition-transform">Week</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-7 gap-2 h-48 items-end">
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/20 rounded-t w-full animate-grow-up" style="height: 40%"></div></div>
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/40 rounded-t w-full animate-grow-up" style="height: 60%; animation-delay: 0.1s;"></div></div>
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/80 rounded-t w-full animate-grow-up" style="height: 90%; animation-delay: 0.2s;"></div></div>
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/60 rounded-t w-full animate-grow-up" style="height: 70%; animation-delay: 0.3s;"></div></div>
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/30 rounded-t w-full animate-grow-up" style="height: 50%; animation-delay: 0.4s;"></div></div>
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/90 rounded-t w-full animate-grow-up" style="height: 95%; animation-delay: 0.5s;"></div></div>
+                            <div class="flex flex-col gap-1"><div class="bg-primary-500/50 rounded-t w-full animate-grow-up" style="height: 65%; animation-delay: 0.6s;"></div></div>
+                        </div>
+                        <div class="flex justify-between mt-4 text-[10px] text-slate-400 uppercase font-bold">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 reveal-up delay-200 hover-glow transition-all">
+                        <h4 class="font-bold mb-6 shimmer inline-block">Top Rage Click Elements</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover-lift transition-transform">
+                                <span class="text-xs font-medium">#btn-checkout-next</span>
+                                <span class="text-xs font-bold text-red-500"><span class="counter" data-target="84">0</span> clicks</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover-lift transition-transform">
+                                <span class="text-xs font-medium">.promo-code-apply</span>
+                                <span class="text-xs font-bold text-red-500"><span class="counter" data-target="52">0</span> clicks</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover-lift transition-transform">
+                                <span class="text-xs font-medium">#shipping-selector</span>
+                                <span class="text-xs font-bold text-red-500"><span class="counter" data-target="29">0</span> clicks</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover-lift transition-transform">
+                                <span class="text-xs font-medium">.nav-profile-dropdown</span>
+                                <span class="text-xs font-bold text-red-500"><span class="counter" data-target="12">0</span> clicks</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Session Replays Section -->
+                <div id="session-section" class="dashboard-section hidden space-y-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
+                        <div class="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="play-circle" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Session Replays</h3>
+                        <p class="text-slate-500 max-w-md mx-auto mb-8">Watch real users interact with your product. Filter by rage clicks, drop-offs, or custom events.</p>
+                        <button class="bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-all">Launch Player</button>
+                    </div>
+                </div>
+
+                <!-- Funnels Section -->
+                <div id="funnels-section" class="dashboard-section hidden space-y-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
+                        <div class="w-20 h-20 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="filter" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Conversion Funnels</h3>
+                        <p class="text-slate-500 max-w-md mx-auto mb-8">Identify where your users are dropping off in the conversion process.</p>
+                        <button class="bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-all">Create New Funnel</button>
+                    </div>
+                </div>
+
+                <!-- Heatmaps Section -->
+                <div id="heatmaps-section" class="dashboard-section hidden space-y-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
+                        <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="layers" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Click & Scroll Heatmaps</h3>
+                        <p class="text-slate-500 max-w-md mx-auto mb-8">Visualize user engagement and find high-value interaction zones.</p>
+                        <button class="bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-primary-700 transition-all">Generate Heatmap</button>
+                    </div>
+                </div>
+
+                <!-- Rage Clicks Section -->
+                <div id="rage-section" class="dashboard-section hidden space-y-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 text-center py-20">
+                        <div class="w-20 h-20 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="mouse-pointer-click" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Rage Click Analysis</h3>
+                        <p class="text-red-500/80 max-w-md mx-auto mb-8">Direct links to sessions where users clicked repeatedly on non-interactive elements.</p>
+                        <button class="bg-red-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-red-700 transition-all">View Alerts</button>
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="settings-section" class="dashboard-section hidden space-y-6">
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-8">
+                        <h3 class="text-2xl font-bold mb-8 font-heading">Dashboard Settings</h3>
+                        <div class="space-y-6 max-w-2xl">
+                            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+                                <div>
+                                    <p class="font-bold">Real-time Refresh</p>
+                                    <p class="text-xs text-slate-500">Update dashboard data every 30 seconds</p>
+                                </div>
+                                <div class="w-12 h-6 bg-primary-600 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
+                                <div>
+                                    <p class="font-bold">Email Notifications</p>
+                                    <p class="text-xs text-slate-500">Receive weekly performance reports</p>
+                                </div>
+                                <div class="w-12 h-6 bg-slate-300 dark:bg-slate-700 rounded-full relative cursor-pointer">
+                                    <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow"></div>
+                                </div>
+                            </div>
+                            <button class="w-full py-4 bg-primary-600 text-white rounded-2xl font-bold shadow-lg shadow-primary-500/20 hover:bg-primary-700 transition-all">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Footer -->
+                <footer class="pt-10 pb-6 border-t border-slate-200 dark:border-slate-800 text-center text-slate-400 text-xs mt-6">
+                    <p>© 2026 InsightFlow Analytics Dashboard. Data updated 2 minutes ago.</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Dashboard Section Switching Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.dashboard-section');
+            const headerTitle = document.querySelector('header h2 span');
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function switchSection(sectionId) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.remove('active-section');
+                    section.classList.add('hidden');
+                });
+
+                // Show selected section
+                const targetSection = document.getElementById(`${sectionId}-section`);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    // Small timeout to trigger transition
+                    setTimeout(() => {
+                        targetSection.classList.add('active-section');
+                    }, 10);
+                }
+
+                // Update Header Title
+                if (headerTitle) {
+                    const link = document.querySelector(`[data-section="${sectionId}"]`);
+                    if (link) {
+                        headerTitle.textContent = link.textContent.trim();
+                    }
+                }
+
+                // Update Active Link State
+                navLinks.forEach(l => {
+                    l.classList.remove('bg-primary-50', 'dark:bg-primary-900/30', 'text-primary-600', 'font-bold', 'active');
+                    l.classList.add('text-slate-500');
+                });
+
+                const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.remove('text-slate-500');
+                    activeLink.classList.add('bg-primary-50', 'dark:bg-primary-900/30', 'text-primary-600', 'font-bold', 'active');
+                }
+
+                // Re-render icons for the new section
+                lucide.createIcons();
+
+                // Close sidebar on mobile
+                if (window.innerWidth < 1024 && sidebar && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    if (overlay) overlay.classList.add('hidden');
+                }
+            }
+
+            // Add click listeners to nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = link.getAttribute('data-section');
+                    switchSection(sectionId);
+                });
+            });
+        });
+
+        // Theme Toggle Persistence check for dashboard
+        const htmlElement = document.documentElement;
+        function updateThemeIconsDashboard() {
+            const sunIcon = document.querySelector('.sun-icon');
+            const moonIcon = document.querySelector('.moon-icon');
+            if (sunIcon && moonIcon) {
+                if (htmlElement.classList.contains('dark')) {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            }
+        }
+        updateThemeIconsDashboard();
+    </script>
+</body>
+</html>

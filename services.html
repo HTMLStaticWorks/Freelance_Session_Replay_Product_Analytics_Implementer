@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | InsightAnalytics | Product Analytics Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
+                            400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
+                            800: '#5b21b6', 900: '#4c1d95', 950: '#2e1065',
+                        },
+                        secondary: '#64748B',
+                        accent: '#FBCFE8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    
+    <!-- Navbar (Identical) -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight font-heading">Insight<span class="gradient-text">Analytics</span></span>
+                </div>
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Home1</a>
+                    <a href="home2.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Home2</a>
+                    <a href="about.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">About</a>
+                    <a href="services.html" class="px-3 py-2 text-sm font-medium text-primary-500 transition-colors">Services</a>
+                    <a href="case-studies.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Case Studies</a>
+                    <a href="blog.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Blog</a>
+                    <a href="dashboard.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Dashboard</a>
+                    <a href="contact.html" class="px-3 py-2 text-sm font-medium hover:text-primary-500 transition-colors">Contact</a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 border-r border-slate-200 dark:border-slate-800 pr-4">
+                        <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
+                            <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
+                        </button>
+                        <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            <i data-lucide="languages" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <a href="login.html" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-primary-500/25">Login</a>
+                </div>
+                <div class="lg:hidden flex items-center space-x-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full">
+                        <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
+                        <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden flex-col bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-4 space-y-2">
+            <a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Home1</a>
+            <a href="home2.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Home2</a>
+            <a href="about.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+            <a href="services.html" class="block px-4 py-2 rounded-lg bg-primary-50 dark:bg-primary-900/20 text-primary-600">Services</a>
+            <a href="case-studies.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Case Studies</a>
+            <a href="blog.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Blog</a>
+            <a href="dashboard.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
+            <a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+            <hr class="border-slate-200 dark:border-slate-800">
+            <div class="flex items-center justify-center px-4 py-2">
+                <a href="login.html" class="w-full text-center bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Section 1: Hero Section -->
+        <section class="py-24 bg-slate-900 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-mesh opacity-10"></div>
+            <div class="blob top-0 right-0 bg-primary-600/20"></div>
+            <div class="blob bottom-0 left-0 bg-accent/10" style="animation-delay: -7s;"></div>
+            <div class="max-w-4xl mx-auto px-4 relative z-10 reveal-up">
+                <h1 class="text-5xl lg:text-7xl font-bold font-heading text-white mb-6">Expert <span class="gradient-text">Analytics</span> Implementation</h1>
+                <p class="text-xl text-slate-400">Professional setup, auditing, and optimization of your product analytics stack.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Service Categories Section -->
+        <section class="py-24 bg-white dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-20 items-center mb-24">
+                    <div class="reveal-left">
+                        <div class="float-element max-w-md mx-auto">
+                            <img src="assets/analytics_service_illustration_1778906415037.png" alt="Analytics Services" class="rounded-[3rem] shadow-2xl w-full object-cover" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000';">
+                        </div>
+                    </div>
+                    <div class="reveal-right delay-200">
+                        <h2 class="text-4xl font-bold font-heading mb-8">What I <span class="gradient-text">Deliver</span></h2>
+                        <div class="space-y-8">
+                            <div class="flex gap-6 hover-lift transition-transform">
+                                <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 text-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0 shimmer">
+                                    <i data-lucide="play-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Session Replay Setup</h4>
+                                    <p class="text-slate-500">End-to-end implementation of FullStory, Hotjar, or PostHog with custom event triggering and PII masking.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 hover-lift transition-transform">
+                                <div class="w-14 h-14 bg-accent/20 text-primary-600 rounded-2xl flex items-center justify-center flex-shrink-0 shimmer">
+                                    <i data-lucide="filter"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Funnel & Path Audits</h4>
+                                    <p class="text-slate-500">Deep-dive audits into your conversion funnels to identify where and why users are dropping off.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 hover-lift transition-transform">
+                                <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 text-slate-600 rounded-2xl flex items-center justify-center flex-shrink-0 shimmer">
+                                    <i data-lucide="layout"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2">Custom Dashboard Design</h4>
+                                    <p class="text-slate-500">Building tailored dashboards in Mixpanel or Amplitude that track your unique SaaS KPIs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Session Replay Workflow Section -->
+        <section class="py-24 bg-slate-50 dark:bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl lg:text-5xl font-bold font-heading mb-4">The Replay <span class="gradient-text">Workflow</span></h2>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">How I turn raw recordings into product-improving insights.</p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center reveal-scale glass-card p-8 rounded-3xl hover-lift transition-all">
+                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl shadow-sm mx-auto flex items-center justify-center mb-6 text-primary-600 font-bold text-xl shimmer">1</div>
+                        <h4 class="font-bold mb-2">Instrumentation</h4>
+                        <p class="text-sm text-slate-500">Injecting the replay script and defining custom identification logic.</p>
+                    </div>
+                    <div class="text-center reveal-scale delay-100 glass-card p-8 rounded-3xl hover-lift transition-all">
+                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl shadow-sm mx-auto flex items-center justify-center mb-6 text-primary-600 font-bold text-xl shimmer">2</div>
+                        <h4 class="font-bold mb-2">Tagging</h4>
+                        <p class="text-sm text-slate-500">Setting up tags for rage clicks, dead clicks, and specific user cohorts.</p>
+                    </div>
+                    <div class="text-center reveal-scale delay-200 glass-card p-8 rounded-3xl hover-lift transition-all">
+                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl shadow-sm mx-auto flex items-center justify-center mb-6 text-primary-600 font-bold text-xl shimmer">3</div>
+                        <h4 class="font-bold mb-2">Observation</h4>
+                        <p class="text-sm text-slate-500">Analyzing 100+ high-value sessions to find recurring friction patterns.</p>
+                    </div>
+                    <div class="text-center reveal-scale delay-300 glass-card p-8 rounded-3xl hover-lift transition-all">
+                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl shadow-sm mx-auto flex items-center justify-center mb-6 text-primary-600 font-bold text-xl shimmer">4</div>
+                        <h4 class="font-bold mb-2">Reporting</h4>
+                        <p class="text-sm text-slate-500">Delivering a prioritized list of UX fixes backed by video evidence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Pricing / Consultation Packages Section -->
+        <section class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl lg:text-5xl font-bold font-heading mb-4">Consultation <span class="gradient-text">Packages</span></h2>
+                    <p class="text-slate-600 dark:text-slate-400">Flexible options for startups at different stages.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Package 1 -->
+                    <div class="glass-card p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 reveal-up hover-lift hover-glow">
+                        <h3 class="text-2xl font-bold mb-2">The Audit</h3>
+                        <p class="text-slate-500 mb-8">One-time deep dive into current setup.</p>
+                        <div class="text-4xl font-bold mb-8">$<span class="counter" data-target="1499">0</span> <span class="text-sm font-normal text-slate-500">/ project</span></div>
+                        <ul class="space-y-4 mb-10 text-slate-600 dark:text-slate-400">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Existing stack health check</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Funnel drop-off report</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Privacy compliance audit</li>
+                        </ul>
+                        <a href="contact.html" class="block text-center py-4 rounded-2xl border border-primary-600 text-primary-600 font-bold hover:bg-primary-600 hover:text-white transition-all glow-pulse">Get Started</a>
+                    </div>
+                    <!-- Package 2 -->
+                    <div class="bg-primary-600 p-10 rounded-[2.5rem] shadow-2xl shadow-primary-500/20 text-white transform lg:scale-110 relative z-10 reveal-up delay-200 hover-lift shimmer">
+                        <div class="absolute top-6 right-8 bg-white/20 text-xs font-bold px-3 py-1 rounded-full animate-pulse">POPULAR</div>
+                        <h3 class="text-2xl font-bold mb-2">Growth Partner</h3>
+                        <p class="text-white/70 mb-8">Full implementation & monthly analysis.</p>
+                        <div class="text-4xl font-bold mb-8">$<span class="counter" data-target="2999">0</span> <span class="text-sm font-normal text-white/50">/ month</span></div>
+                        <ul class="space-y-4 mb-10 text-white/80">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-white w-5 h-5"></i> Full stack implementation</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-white w-5 h-5"></i> Monthly session analysis</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-white w-5 h-5"></i> Bi-weekly strategy calls</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-white w-5 h-5"></i> Unlimited dashboard edits</li>
+                        </ul>
+                        <a href="contact.html" class="block text-center py-4 rounded-2xl bg-white text-primary-600 font-bold hover:bg-slate-100 transition-all glow-pulse">Select Plan</a>
+                    </div>
+                    <!-- Package 3 -->
+                    <div class="glass-card p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 reveal-up delay-400 hover-lift hover-glow">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-slate-500 mb-8">Custom solutions for scale.</p>
+                        <div class="text-4xl font-bold mb-8">Custom <span class="text-sm font-normal text-slate-500">pricing</span></div>
+                        <ul class="space-y-4 mb-10 text-slate-600 dark:text-slate-400">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Multi-product tracking</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> Custom SDK developments</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="text-green-500 w-5 h-5"></i> On-site team training</li>
+                        </ul>
+                        <a href="contact.html" class="block text-center py-4 rounded-2xl border border-slate-900 dark:border-white text-slate-900 dark:text-white font-bold hover:bg-slate-900 dark:hover:bg-white hover:text-white dark:hover:text-slate-900 transition-all">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Section: Newsletter -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 reveal-scale">
+                <div class="newsletter-card p-12 rounded-[3rem] text-center relative z-10">
+                    <h2 class="text-3xl lg:text-5xl font-bold font-heading mb-6">Stay Ahead of the <span class="gradient-text">Curve</span></h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-lg">
+                        Get the latest session replay strategies, funnel optimization tips, and product analytics insights delivered straight to your inbox.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="Enter your work email" class="flex-1 px-6 py-4 rounded-full outline-none focus:ring-2 focus:ring-primary-500 newsletter-input transition-all" required>
+                        <button type="submit" class="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-bold transition-all shadow-lg shadow-primary-500/25 whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </form>
+                    <p class="text-xs text-slate-500 mt-6">No spam. Only high-value insights. Unsubscribe at any time.</p>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 mb-16">
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white">
+                            <i data-lucide="activity" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-xl font-bold font-heading">InsightAnalytics</span>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
+                        Helping SaaS companies understand their users through advanced session recording and product analytics implementation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group">
+                            <i data-lucide="twitter" class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group">
+                            <i data-lucide="linkedin" class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all group">
+                            <i data-lucide="github" class="w-5 h-5 text-slate-600 dark:text-slate-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-bold mb-6">Platform</h4>
+                    <ul class="space-y-4 text-slate-500 dark:text-slate-400">
+                        <li><a href="index.html" class="hover:text-primary-500 transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-primary-500 transition-colors">Services</a></li>
+                        <li><a href="case-studies.html" class="hover:text-primary-500 transition-colors">Case Studies</a></li>
+                        <li><a href="dashboard.html" class="hover:text-primary-500 transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-slate-500 dark:text-slate-400">
+                        <li><a href="about.html" class="hover:text-primary-500 transition-colors">About Me</a></li>
+                        <li><a href="blog.html" class="hover:text-primary-500 transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-500 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-primary-500 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Get the latest behavioral analytics tips and SaaS growth strategies delivered to your inbox.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border-none outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all" required>
+                        <button type="submit" class="p-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all hover-lift">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <p>© 2026 InsightAnalytics. All rights reserved.</p>
+                <div class="flex gap-8">
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-primary-700 transition-all hover-lift">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

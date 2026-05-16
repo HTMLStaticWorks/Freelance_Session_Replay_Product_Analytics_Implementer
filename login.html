@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | InsightAnalytics</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'></polyline></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd',
+                            400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9',
+                            800: '#5b21b6', 900: '#4c1d95', 950: '#2e1065',
+                        },
+                        secondary: '#64748B',
+                        accent: '#FBCFE8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden">
+    
+    <!-- Main Content -->
+    <main class="min-h-screen flex items-center justify-center bg-mesh relative overflow-hidden">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" style="animation-delay: -5s;"></div>
+
+        <div class="w-full flex items-center justify-center p-6 relative z-10">
+            <div class="w-full max-w-md reveal-up relative">
+                <!-- Inline Utilities -->
+                <div class="absolute top-6 right-6 flex items-center gap-2 z-20">
+                    <button id="theme-toggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-slate-400">
+                        <i data-lucide="sun" class="sun-icon w-4 h-4"></i>
+                        <i data-lucide="moon" class="moon-icon w-4 h-4 hidden"></i>
+                    </button>
+                    <button id="rtl-toggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-slate-400">
+                        <i data-lucide="languages" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-8 lg:p-10 rounded-[2.5rem] shadow-2xl shadow-slate-200/50 dark:shadow-none">
+                    <div class="text-center mb-10">
+                        <a href="index.html" class="inline-flex items-center gap-2 group mb-6">
+                            <div class="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
+                                <i data-lucide="activity"></i>
+                            </div>
+                            <span class="text-xl font-bold font-heading tracking-tight">Insight<span class="text-primary-600">Analytics</span></span>
+                        </a>
+                        <h1 class="text-3xl font-bold font-heading mb-3">Welcome Back</h1>
+                        <p class="text-slate-500">Sign in to continue to your dashboard</p>
+                    </div>
+
+                    <form class="space-y-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold ms-1">Email Address</label>
+                            <div class="relative group">
+                                <i data-lucide="mail" class="absolute start-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-primary-600 transition-colors"></i>
+                                <input type="email" placeholder="name@company.com" class="w-full ps-12 pe-4 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 outline-none bg-slate-50 dark:bg-slate-900/50 transition-all">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold ms-1">Password</label>
+                            <div class="relative group">
+                                <i data-lucide="lock" class="absolute start-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-primary-600 transition-colors"></i>
+                                <input type="password" id="login-password" placeholder="••••••••" class="w-full ps-12 pe-12 py-4 rounded-2xl border border-slate-200 dark:border-slate-800 focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 outline-none bg-slate-50 dark:bg-slate-900/50 transition-all">
+                                <button type="button" onclick="togglePassword('login-password', this)" class="absolute end-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary-600 transition-colors">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row items-center justify-between gap-4">
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 rounded border-slate-300 text-primary-600 focus:ring-primary-500">
+                                <span class="text-xs sm:text-sm text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors whitespace-nowrap">Remember me</span>
+                            </label>
+                            <a href="#" class="text-xs sm:text-sm font-bold text-primary-600 hover:text-primary-700 hover:underline whitespace-nowrap">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-2xl font-bold text-lg shadow-xl shadow-primary-500/25 transition-all glow-pulse transform active:scale-[0.98]">
+                            Sign In
+                        </button>
+
+                        <div class="relative py-4">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-slate-200 dark:border-slate-800"></div>
+                            </div>
+                            <div class="relative flex justify-center text-xs uppercase font-bold">
+                                <span class="bg-white dark:bg-slate-900 px-4 text-slate-400">Or connect with</span>
+                            </div>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="flex justify-center gap-4">
+                            <button type="button" class="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:scale-110 hover:shadow-lg group">
+                                <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-6 h-6" alt="Google">
+                            </button>
+                            <button type="button" class="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:scale-110 hover:shadow-lg group">
+                                <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" class="w-6 h-6" alt="Facebook">
+                            </button>
+                            <button type="button" class="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all hover:scale-110 hover:shadow-lg group">
+                                <img src="https://www.svgrepo.com/show/511330/apple-fill.svg" class="w-6 h-6 dark:invert" alt="Apple">
+                            </button>
+                        </div>
+
+                        <p class="text-center text-sm text-slate-500">
+                            New to InsightAnalytics? <a href="signup.html" class="text-primary-600 font-bold hover:underline">Create an account</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+        
+        function togglePassword(id, btn) {
+            const input = document.getElementById(id);
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                input.type = 'password';
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
