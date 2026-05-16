@@ -55,10 +55,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #8b5cf6 0%, #fbcfe8 100%);
+    background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.drop-shadow-premium {
+    filter: drop-shadow(0 10px 15px rgba(124, 58, 237, 0.1));
+}
+
+.dark .drop-shadow-premium {
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
 }
 
 .bg-mesh {
@@ -180,6 +188,15 @@ h1, h2, h3, h4, h5, h6 {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
+}
+
+@keyframes slow-zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+    animation: slow-zoom 20s linear infinite alternate;
 }
 
 /* Progress Bar Animation */

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | InsightAnalytics | Product Analytics Expert</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'></polyline></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -81,9 +82,8 @@
             <a href="dashboard.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
             <a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
             <hr class="border-slate-200 dark:border-slate-800 my-2">
-            <div class="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
-                <span class="text-sm font-medium">Appearance</span>
-                <div class="flex items-center gap-2">
+            <div class="flex items-center justify-center px-4 py-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
+                <div class="flex items-center gap-6">
                     <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                         <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
                         <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
@@ -107,19 +107,9 @@
             <div class="blob top-0 left-0 bg-primary-600/10 animate-pulse"></div>
             <div class="blob bottom-0 right-0 bg-accent/10" style="animation-delay: -5s;"></div>
             <div class="max-w-4xl mx-auto px-4 text-center reveal-up">
-                <h1 class="text-5xl lg:text-7xl font-bold font-heading mb-6">Product <span class="gradient-text">Insights Blog</span></h1>
-                <p class="text-xl text-slate-600 dark:text-slate-400 mb-10">Weekly strategies on session replays, funnel optimization, and data-driven product growth.</p>
+                <h1 class="text-5xl lg:text-7xl font-bold font-heading mb-6 drop-shadow-premium">Product <span class="gradient-text">Insights Blog</span></h1>
+
                 
-                <!-- Search Bar Integrated into Hero -->
-                <div class="relative w-full max-w-2xl mx-auto hover-lift transition-all">
-                    <div class="absolute inset-0 bg-primary-500/20 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="relative">
-                        <input type="text" placeholder="Search articles..." class="w-full px-8 py-5 rounded-full bg-white dark:bg-slate-900 shadow-2xl border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary-500 outline-none text-lg">
-                        <button class="absolute right-3 top-1/2 -translate-y-1/2 bg-primary-600 text-white p-4 rounded-full hover:bg-primary-700 transition-all shadow-lg flex items-center justify-center">
-                            <i data-lucide="search" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -147,7 +137,7 @@
                     <!-- Article 2 -->
                     <article class="glass-card rounded-3xl overflow-hidden reveal-scale delay-200 hover-lift hover-glow">
                         <div class="overflow-hidden h-48">
-                            <img src="assets/ux_research_visuals_ui_1778908763790.png" alt="UX Research Best Practices" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" alt="UX Research Best Practices" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 text-xs text-primary-600 font-bold uppercase mb-4 animate-pulse">
@@ -164,7 +154,7 @@
                     <!-- Article 3 -->
                     <article class="glass-card rounded-3xl overflow-hidden reveal-scale delay-400 hover-lift hover-glow">
                         <div class="overflow-hidden h-48">
-                            <img src="assets/retention_report_dashboard_ui_1778908782845.png" alt="Retention Data Modeling" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Retention Data Modeling" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy">
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 text-xs text-primary-600 font-bold uppercase mb-4 animate-pulse">
@@ -182,34 +172,7 @@
             </div>
         </section>
 
-        <!-- Section 3: UX Analytics Tips Section -->
-        <section class="py-24 bg-slate-50 dark:bg-slate-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-primary-600 rounded-[3rem] p-12 lg:p-20 text-white relative overflow-hidden reveal-up">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-48 -mt-48 animate-pulse"></div>
-                    <div class="grid xl:grid-cols-2 gap-16 items-center relative z-10 text-center xl:text-left">
-                        <div class="max-w-2xl mx-auto xl:mx-0">
-                            <h2 class="text-4xl font-bold font-heading mb-6">Quick <span class="text-accent">UX Analytics Tips</span></h2>
-                            <p class="text-lg text-white/80 mb-10">Subscribe to get bite-sized product insights and implementation hacks delivered to your inbox twice a week.</p>
-                            <form class="flex flex-col sm:flex-row gap-4">
-                                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-accent outline-none">
-                                <button class="px-8 py-4 bg-white text-primary-600 rounded-2xl font-bold hover:bg-slate-100 transition-all hover-lift shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap">Subscribe Now</button>
-                            </form>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover-lift transition-transform">
-                                <h4 class="font-bold mb-2">Tip #<span class="counter" data-target="42">0</span></h4>
-                                <p class="text-xs text-white/60">Always mask credit card CVV fields at the SDK level to prevent PII leaks.</p>
-                            </div>
-                            <div class="p-6 bg-white/5 rounded-2xl border border-white/10 hover-lift transition-transform">
-                                <h4 class="font-bold mb-2">Tip #<span class="counter" data-target="89">0</span></h4>
-                                <p class="text-xs text-white/60">Use 'Dead Click' detection to find broken links that users expect to be interactive.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Section 4: Product Insight & Funnel Strategy Section -->
         <section class="py-24">

@@ -93,9 +93,8 @@
             <a href="dashboard.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
             <a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
             <hr class="border-slate-200 dark:border-slate-800 my-2">
-            <div class="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
-                <span class="text-sm font-medium">Appearance</span>
-                <div class="flex items-center gap-2">
+            <div class="flex items-center justify-center px-4 py-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
+                <div class="flex items-center gap-6">
                     <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                         <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
                         <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
@@ -125,7 +124,7 @@
                         <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-6 border border-primary-200 dark:border-primary-800 animate-pulse">
                             <i data-lucide="zap" class="w-4 h-4 mr-2"></i> Elevate Your Product Strategy
                         </span>
-                        <h1 class="text-5xl lg:text-7xl font-bold font-heading leading-tight mb-8">
+                        <h1 class="text-5xl lg:text-7xl font-bold font-heading leading-tight mb-8 drop-shadow-premium">
                             Transform User Data into <span class="gradient-text">Growth Engines</span>
                         </h1>
                         <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-xl leading-relaxed">
@@ -374,7 +373,7 @@
                 <div class="grid lg:grid-cols-2 gap-8 items-stretch">
                     <!-- Case Study 1 -->
                     <div class="glass-card overflow-hidden rounded-3xl reveal-left hover-glow h-full flex flex-col">
-                        <div class="p-8">
+                        <div class="p-8 flex flex-col h-full">
                             <div class="flex items-center gap-4 mb-6">
                                 <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center font-bold text-primary-600 shimmer">S</div>
                                 <div>
@@ -382,14 +381,16 @@
                                     <p class="text-xs text-slate-500">Video Hosting Platform</p>
                                 </div>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Fixing the 40% Onboarding Churn</h3>
-                            <p class="text-slate-600 dark:text-slate-400 mb-8">Used session replays to discover a confusing "Setup Wizard" step that was causing 40% of users to drop off within 2 minutes.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-2xl border border-green-100 dark:border-green-800 flex flex-col justify-center min-h-[100px]">
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-4">Fixing the 40% Onboarding Churn</h3>
+                                <p class="text-slate-600 dark:text-slate-400 mb-8">Used session replays to discover a confusing "Setup Wizard" step that was causing 40% of users to drop off within 2 minutes.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
+                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-2xl border border-green-100 dark:border-green-800 flex flex-col justify-center items-center text-center h-32">
                                     <p class="text-[10px] sm:text-xs text-green-600 font-bold uppercase mb-1">Result</p>
                                     <p class="text-xl sm:text-2xl font-bold text-green-700 dark:text-green-400">+<span class="counter" data-target="55">0</span>% Retention</p>
                                 </div>
-                                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800 flex flex-col justify-center min-h-[100px]">
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800 flex flex-col justify-center items-center text-center h-32">
                                     <p class="text-[10px] sm:text-xs text-blue-600 font-bold uppercase mb-1">Timeframe</p>
                                     <p class="text-xl sm:text-2xl font-bold text-blue-700 dark:text-blue-400"><span class="counter" data-target="3">0</span> Weeks</p>
                                 </div>
@@ -398,7 +399,7 @@
                     </div>
                     <!-- Case Study 2 -->
                     <div class="glass-card overflow-hidden rounded-3xl reveal-right delay-200 hover-glow h-full flex flex-col">
-                        <div class="p-8">
+                        <div class="p-8 flex flex-col h-full">
                             <div class="flex items-center gap-4 mb-6">
                                 <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center font-bold text-primary-600 shimmer">P</div>
                                 <div>
@@ -406,14 +407,16 @@
                                     <p class="text-xs text-slate-500">Payment Gateway</p>
                                 </div>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Optimizing High-Value Funnels</h3>
-                            <p class="text-slate-600 dark:text-slate-400 mb-8">Identified rage clicks on the 'Verify Identity' button which was failing silently on mobile browsers.</p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-2xl border border-green-100 dark:border-green-800 flex flex-col justify-center min-h-[100px]">
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-4">Optimizing High-Value Funnels</h3>
+                                <p class="text-slate-600 dark:text-slate-400 mb-8">Identified rage clicks on the 'Verify Identity' button which was failing silently on mobile browsers.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto">
+                                <div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-2xl border border-green-100 dark:border-green-800 flex flex-col justify-center items-center text-center h-32">
                                     <p class="text-[10px] sm:text-xs text-green-600 font-bold uppercase mb-1">Result</p>
                                     <p class="text-xl sm:text-2xl font-bold text-green-700 dark:text-green-400">$<span class="counter" data-target="2">0</span>.4M ARR</p>
                                 </div>
-                                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800 flex flex-col justify-center min-h-[100px]">
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-2xl border border-blue-100 dark:border-blue-800 flex flex-col justify-center items-center text-center h-32">
                                     <p class="text-[10px] sm:text-xs text-blue-600 font-bold uppercase mb-1">Fix</p>
                                     <p class="text-xl sm:text-2xl font-bold text-blue-700 dark:text-blue-400">Mobile Patch</p>
                                 </div>

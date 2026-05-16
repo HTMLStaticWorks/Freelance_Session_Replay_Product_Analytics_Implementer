@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Logic
-    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+    const themeToggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile, #theme-toggle-sidebar');
     const htmlElement = document.documentElement;
     
     // Check for saved theme
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateThemeIcons();
 
     // RTL Toggle Logic
-    const rtlToggles = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile');
+    const rtlToggles = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile, #rtl-toggle-sidebar');
     rtlToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const isRtl = htmlElement.getAttribute('dir') === 'rtl';

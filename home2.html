@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home 2 | InsightAnalytics | Product Insight Expert</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'></polyline></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -81,9 +82,8 @@
             <a href="dashboard.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
             <a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
             <hr class="border-slate-200 dark:border-slate-800 my-2">
-            <div class="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
-                <span class="text-sm font-medium">Appearance</span>
-                <div class="flex items-center gap-2">
+            <div class="flex items-center justify-center px-4 py-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl mx-2">
+                <div class="flex items-center gap-6">
                     <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                         <i data-lucide="sun" class="w-5 h-5 sun-icon"></i>
                         <i data-lucide="moon" class="w-5 h-5 moon-icon hidden"></i>
@@ -105,15 +105,15 @@
         <!-- Section 1: Alternative Hero Section -->
         <section class="py-32 lg:py-48 relative bg-[#F8FAFF] dark:bg-slate-950 overflow-hidden">
             <!-- Premium Background Image -->
-            <div class="absolute inset-0 bg-[url('assets/hero_background.png')] bg-cover bg-center bg-no-repeat opacity-30 dark:opacity-40"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2032&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat opacity-15 dark:opacity-20 animate-slow-zoom"></div>
             <!-- Gradient Overlay for smooth blending -->
-            <div class="absolute inset-0 bg-gradient-to-t from-[#F8FAFF] via-transparent to-[#F8FAFF]/50 dark:from-slate-950 dark:to-slate-950/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white dark:from-slate-950/80 dark:via-slate-950/40 dark:to-slate-950"></div>
             
             <div class="blob top-0 left-0 bg-primary-600/10 dark:bg-primary-600/30"></div>
             <div class="blob bottom-0 right-0 bg-accent/10" style="animation-delay: -10s;"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-4xl mx-auto reveal-up">
-                    <h1 class="text-5xl lg:text-8xl font-bold font-heading text-slate-900 dark:text-white mb-8 leading-tight">
+                    <h1 class="text-4xl sm:text-6xl lg:text-8xl font-bold font-heading text-slate-950 dark:text-white mb-8 leading-tight drop-shadow-premium">
                         The Science of <span class="gradient-text">User Behavior</span>
                     </h1>
                     <p class="text-xl text-slate-600 dark:text-slate-400 mb-12">
@@ -346,7 +346,7 @@
                     <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Real results from SaaS companies that optimized their user experience through data.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <div class="glass-card p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 reveal-left hover-lift text-center">
+                    <div class="glass-card p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 reveal-left hover-lift text-center flex flex-col h-full">
                         <div class="flex flex-col items-center mb-6">
                             <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-2xl mb-4">S</div>
                             <div>
@@ -354,8 +354,10 @@
                                 <p class="text-sm text-slate-500">Video Hosting Platform</p>
                             </div>
                         </div>
-                        <p class="text-slate-600 dark:text-slate-300 mb-8 italic">"The implementation of session replay and funnel tracking allowed us to identify a critical checkout bug that was costing us $5k/week. The ROI was immediate."</p>
-                        <div class="grid grid-cols-2 py-6 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex-1">
+                            <p class="text-slate-600 dark:text-slate-300 mb-8 italic">"The implementation of session replay and funnel tracking allowed us to identify a critical checkout bug that was costing us $5k/week. The ROI was immediate."</p>
+                        </div>
+                        <div class="grid grid-cols-2 py-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
                             <div>
                                 <p class="text-3xl font-bold text-primary-600">+22%</p>
                                 <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Conversion</p>
@@ -366,7 +368,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="glass-card p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 reveal-right hover-lift text-center">
+                    <div class="glass-card p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 reveal-right hover-lift text-center flex flex-col h-full">
                         <div class="flex flex-col items-center mb-6">
                             <div class="w-16 h-16 bg-accent/40 rounded-full flex items-center justify-center text-primary-900 font-bold text-2xl mb-4">E</div>
                             <div>
@@ -374,8 +376,10 @@
                                 <p class="text-sm text-slate-500">LMS System</p>
                             </div>
                         </div>
-                        <p class="text-slate-600 dark:text-slate-300 mb-8 italic">"We now have a 360-degree view of our students' learning journey. The custom dashboards are our main source of truth for product decisions."</p>
-                        <div class="grid grid-cols-2 py-6 border-t border-slate-100 dark:border-slate-800">
+                        <div class="flex-1">
+                            <p class="text-slate-600 dark:text-slate-300 mb-8 italic">"We now have a 360-degree view of our students' learning journey. The custom dashboards are our main source of truth for product decisions."</p>
+                        </div>
+                        <div class="grid grid-cols-2 py-6 border-t border-slate-100 dark:border-slate-800 mt-auto">
                             <div>
                                 <p class="text-3xl font-bold text-primary-600">+15m</p>
                                 <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Avg Session</p>
