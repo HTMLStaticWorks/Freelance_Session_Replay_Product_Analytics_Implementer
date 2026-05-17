@@ -95,24 +95,6 @@
                     </a>
                 </nav>
 
-                <!-- Mobile Preferences (Theme/RTL) -->
-                <div class="lg:hidden mt-6 pt-6 border-t border-slate-100 dark:border-slate-800/50">
-                    <p class="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Preferences</p>
-                    <div class="flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
-                        <span class="text-sm font-medium">Appearance</span>
-                        <button id="theme-toggle-sidebar" class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm transition-all active:scale-95">
-                            <i data-lucide="sun" class="sun-icon w-4 h-4 text-orange-500"></i>
-                            <i data-lucide="moon" class="moon-icon w-4 h-4 text-primary-400 hidden"></i>
-                        </button>
-                    </div>
-                    <div class="flex items-center justify-between px-4 py-2 mt-2 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
-                        <span class="text-sm font-medium">Layout Direction</span>
-                        <button id="rtl-toggle-sidebar" class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm transition-all active:scale-95">
-                            <i data-lucide="arrow-left-right" class="w-4 h-4 text-primary-500"></i>
-                        </button>
-                    </div>
-                </div>
-
                     <!-- User Profile -->
                     <div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
                         <div class="flex items-center justify-center px-4 mb-6 pb-6 border-b border-slate-100 dark:border-slate-800/50">
@@ -142,19 +124,19 @@
                     <button id="sidebar-toggle" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex-shrink-0 transition-colors">
                         <i data-lucide="menu" class="w-7 h-7"></i>
                     </button>
-                    <h2 class="text-lg sm:text-xl font-bold font-heading whitespace-nowrap overflow-hidden text-ellipsis">Analytics <span class="text-slate-500 ml-2 hidden sm:inline">Overview</span></h2>
+                    <h2 class="text-lg sm:text-xl font-bold font-heading whitespace-nowrap overflow-hidden text-ellipsis">Analytics <span class="text-slate-500 ml-1 sm:ml-2">Overview</span></h2>
                 </div>
                 
                 <div class="flex items-center gap-2 sm:gap-4">
                     <!-- Theme & RTL Toggles (Added for all views) -->
 
-                    <!-- Theme & RTL Toggles (Hidden on Mobile, shown on Desktop) -->
-                    <div class="hidden lg:flex items-center gap-3 border-e border-slate-200 dark:border-slate-800 pe-4">
-                        <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
+                    <!-- Theme & RTL Toggles (Shown on all views) -->
+                    <div class="flex items-center gap-1 sm:gap-3 border-e border-slate-200 dark:border-slate-800 pe-2 sm:pe-4">
+                        <button id="theme-toggle" class="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
                             <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
                             <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
                         </button>
-                        <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL">
+                        <button id="rtl-toggle" class="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL">
                             <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         </button>
                     </div>
