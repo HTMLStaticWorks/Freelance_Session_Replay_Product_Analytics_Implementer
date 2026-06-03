@@ -34,17 +34,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // RTL Toggle Logic
     const rtlToggles = document.querySelectorAll('#rtl-toggle, #rtl-toggle-mobile, #rtl-toggle-sidebar');
+    
+    function updateRTLToggles() {
+        // Static languages icon is used, no dynamic icon replacement required.
+    }
+
     rtlToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const isRtl = htmlElement.getAttribute('dir') === 'rtl';
             htmlElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
             localStorage.setItem('dir', isRtl ? 'ltr' : 'rtl');
+            updateRTLToggles();
         });
     });
     
     // Check for saved direction
     const savedDir = localStorage.getItem('dir') || 'ltr';
     htmlElement.setAttribute('dir', savedDir);
+    updateRTLToggles();
 
     // Mobile Menu Logic
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
