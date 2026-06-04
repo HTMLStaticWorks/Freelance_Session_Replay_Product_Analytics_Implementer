@@ -275,20 +275,58 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Newsletter Section Styles */
 .newsletter-card {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(251, 207, 232, 0.1) 100%);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #1e1b4b 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
 }
 
-.dark .newsletter-card {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(251, 207, 232, 0.05) 100%);
+.newsletter-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulseGlow 8s infinite alternate;
 }
 
-.newsletter-input {
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+@keyframes pulseGlow {
+    0% { transform: translate(-10%, -10%) scale(1); }
+    100% { transform: translate(10%, 10%) scale(1.1); }
 }
 
-.dark .newsletter-input {
-    background: rgba(15, 23, 42, 0.5);
+/* Ensure children are above the glowing backdrop */
+.newsletter-card > * {
+    position: relative;
+    z-index: 10;
 }
+
+/* Color overrides for dark card contrast in light/dark mode */
+.newsletter-card h2, 
+.newsletter-card h2 span.gradient-text {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.newsletter-card p {
+    color: #94a3b8 !important; /* light slate-400 */
+}
+
+/* Secondary button override for contrast */
+.newsletter-card a.border {
+    color: #f1f5f9 !important;
+    border-color: rgba(241, 245, 249, 0.2) !important;
+}
+
+.newsletter-card a.border:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(241, 245, 249, 0.4) !important;
+}
+

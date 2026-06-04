@@ -60,7 +60,7 @@
                             <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
                         </button>
                         <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL/LTR" aria-label="Toggle layout direction">
-                            <i data-lucide="languages" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         </button>
                     </div>
                     <a href="login.html" class="bg-primary-600 hover:bg-primary-700 text-white lg:px-4 xl:px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-primary-500/25">Login</a>
@@ -90,7 +90,7 @@
                             <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
                         </button>
                         <button id="rtl-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL/LTR" aria-label="Toggle layout direction">
-                            <i data-lucide="languages" class="w-5 h-5"></i>
+                            <i data-lucide="arrow-left-right" class="w-5 h-5"></i>
                         </button>
                     </div>
                     <a href="login.html" class="w-full text-center bg-primary-600 text-white px-4 py-3 rounded-full font-medium">Login</a>
@@ -229,18 +229,29 @@
 
         <!-- Section: CTA -->
         <section class="py-24 relative overflow-hidden">
-            <div class="max-w-5xl mx-auto px-4">
-                <div class="newsletter-card p-6 sm:p-10 lg:p-16 rounded-[3rem] text-center relative z-10">
-                    <h2 class="text-3xl lg:text-5xl font-medium font-heading mb-6">Ready to Get <span class="gradient-text">Started?</span></h2>
-                    <p class="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-lg lg:text-xl leading-relaxed">
-                        Schedule a discovery call or learn more about my product analytics implementation features to start optimizing your user experience.
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="newsletter-card p-8 sm:p-12 lg:p-16 rounded-[3rem] text-center relative z-10">
+                    <!-- Avatar cluster display -->
+                    <div class="flex items-center justify-center -space-x-3 mb-6">
+                        <div class="w-12 h-12 rounded-full border-2 border-slate-900 bg-primary-100 flex items-center justify-center font-bold text-xs text-primary-600">ME</div>
+                        <div class="w-12 h-12 rounded-full border-2 border-slate-900 bg-accent/40 flex items-center justify-center font-bold text-xs text-slate-800">YOU</div>
+                        <div class="w-12 h-12 rounded-full border-2 border-slate-900 bg-green-500/20 flex items-center justify-center text-green-400">
+                            <i data-lucide="sparkles" class="w-5 h-5 animate-spin-slow"></i>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-white mb-6 uppercase tracking-widest">
+                        Zero Guesswork Framework
+                    </span>
+                    <h2 class="text-3xl lg:text-5xl font-medium font-heading mb-6 text-white leading-tight">Let's Build <span class="gradient-text">Data-Driven Products</span> Together</h2>
+                    <p class="text-slate-300 mb-10 max-w-xl mx-auto text-base lg:text-lg leading-relaxed">
+                        Work directly with an analytics specialist. No agency overhead, no junior developers. Just direct, result-driven growth strategies.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="contact.html" class="px-6 py-3.5 sm:px-8 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-medium text-base sm:text-lg transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/45 hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap">
-                            <i data-lucide="calendar" class="w-5 h-5"></i> Schedule a Demo
+                        <a href="about.html#expertise" class="px-6 py-3.5 sm:px-8 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-full font-medium text-base sm:text-lg transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/45 hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap">
+                            <i data-lucide="user-check" class="w-5 h-5"></i> Meet the Process
                         </a>
-                        <a href="services.html" class="px-6 py-3.5 sm:px-8 sm:py-4 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full font-medium text-base sm:text-lg transition-all hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap">
-                            <i data-lucide="info" class="w-5 h-5"></i> Learn More Features
+                        <a href="contact.html" class="px-6 py-3.5 sm:px-8 sm:py-4 border border-white/20 text-white rounded-full font-medium text-base sm:text-lg transition-all hover:bg-white/10 hover:-translate-y-0.5 flex items-center gap-2 whitespace-nowrap">
+                            <i data-lucide="phone" class="w-5 h-5"></i> Schedule a Call
                         </a>
                     </div>
                 </div>
