@@ -792,6 +792,12 @@
                     }, 10);
                 }
 
+                // Scroll main content to the top
+                const mainContent = document.querySelector('main');
+                if (mainContent) {
+                    mainContent.scrollTop = 0;
+                }
+
                 // Update Header Title
                 if (headerTitle) {
                     const link = document.querySelector(`[data-section="${sectionId}"]`);
