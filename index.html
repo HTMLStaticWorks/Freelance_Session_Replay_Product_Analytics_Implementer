@@ -114,9 +114,9 @@
         <!-- Section 1: Hero Section -->
         <section class="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-48 bg-slate-950 text-white">
             <!-- Premium Background Image -->
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat opacity-50 animate-slow-zoom -z-10"></div>
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 animate-slow-zoom z-0" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop');"></div>
             <!-- Gradient Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950 -z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950 z-0"></div>
             <div class="blob -top-24 -left-24"></div>
             <div class="blob top-1/2 -right-24" style="animation-delay: -5s;"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,18 +146,18 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
                         </div>
                         <!-- Floating Cards -->
-                        <div class="absolute -bottom-6 left-4 md:-bottom-10 md:left-4 lg:-left-10 glass p-3 md:p-6 rounded-xl md:rounded-2xl shadow-xl border border-white/10 hover-lift transition-transform">
+                        <div class="absolute -bottom-6 left-4 md:-bottom-10 md:left-4 lg:-left-10 glass p-3 md:p-6 rounded-xl md:rounded-2xl shadow-xl border border-white/10 hover-lift transition-transform text-slate-900 dark:text-white">
                             <div class="flex items-center gap-2 md:gap-4">
                                 <div class="w-8 h-8 md:w-12 md:h-12 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center">
                                     <i data-lucide="trending-up" class="w-4 h-4 md:w-6 md:h-6"></i>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] md:text-xs text-slate-500">Conversion Rate</p>
+                                    <p class="text-[10px] md:text-xs text-slate-500 dark:text-slate-400">Conversion Rate</p>
                                     <p class="text-sm md:text-xl font-medium">+<span class="counter" data-target="24">0</span>.8%</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute -top-4 right-4 md:-top-6 md:right-4 lg:-right-6 glass p-2.5 md:p-4 rounded-lg md:rounded-xl shadow-lg border border-white/10 hover-lift transition-transform">
+                        <div class="absolute -top-4 right-4 md:-top-6 md:right-4 lg:-right-6 glass p-2.5 md:p-4 rounded-lg md:rounded-xl shadow-lg border border-white/10 hover-lift transition-transform text-slate-900 dark:text-white">
                             <div class="flex items-center gap-2 md:gap-3">
                                 <div class="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full animate-pulse"></div>
                                 <span class="text-xs md:text-sm font-medium">Real-time Sessions: <span class="counter" data-target="1429">0</span></span>
@@ -170,7 +170,7 @@
 
 
         <!-- Section 2: What I Do & How It Helps -->
-        <section class="py-24 bg-white dark:bg-slate-950">
+        <section class="py-24 bg-white dark:bg-slate-900/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16 reveal">
                     <h2 class="text-3xl lg:text-5xl font-medium font-heading mb-4">What I Do & <span class="gradient-text">How It Helps</span></h2>
@@ -183,7 +183,7 @@
                     <!-- Session Replay Card -->
                     <div class="p-8 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-primary-50 to-white dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800/80 hover-glow transition-all flex flex-col justify-between">
                         <div>
-                            <img src="assets/heatmap_sample_ui_1778906219922.png" alt="Session Replay Heatmap" class="w-full h-64 object-cover rounded-2xl mb-8 border border-slate-200/60 dark:border-slate-800/80 shadow-md">
+                            <img src="assets/heatmap_sample_ui_1778906219922.png" alt="Session Replay Heatmap" class="w-full h-auto rounded-2xl mb-8 border border-slate-200/60 dark:border-slate-800/80 shadow-md">
                             <h3 class="text-2xl lg:text-3xl font-medium mb-4">Session Replay Services</h3>
                             <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-base">
                                 Session replays capture real user interactions in video-like playback. I implement secure, compliant tracking so you can watch exactly how visitors navigate your app, locate bugs, and identify friction points.
@@ -200,7 +200,7 @@
                     <!-- Product Analytics Card -->
                     <div class="p-8 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-purple-50 to-white dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800/80 hover-glow transition-all flex flex-col justify-between">
                         <div>
-                            <img src="assets/funnel_visualization_ui_1778906235562.png" alt="Product Analytics Funnel" class="w-full h-64 object-cover rounded-2xl mb-8 border border-slate-200/60 dark:border-slate-800/80 shadow-md">
+                            <img src="assets/funnel_visualization_ui_1778906235562.png" alt="Product Analytics Funnel" class="w-full h-auto rounded-2xl mb-8 border border-slate-200/60 dark:border-slate-800/80 shadow-md">
                             <h3 class="text-2xl lg:text-3xl font-medium mb-4">Product Analytics Services</h3>
                             <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-base">
                                 Product analytics provide aggregate event data. I instrument Mixpanel, Amplitude, or PostHog to track metrics like signups, trial conversions, and customer retention cohorts at scale.
@@ -393,11 +393,11 @@
             <div class="max-w-5xl mx-auto px-4">
                 <div class="relative z-10">
                     <!-- Stats badge overlay -->
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-10 md:translate-x-0 rtl:md:right-auto rtl:md:left-10 bg-green-500 text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase px-6 py-2 rounded-full shadow-lg z-20 flex items-center gap-2">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 md:-top-4 md:left-auto md:right-10 md:translate-x-0 rtl:md:right-auto rtl:md:left-10 bg-green-500 text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase px-6 py-2 rounded-full shadow-lg z-20 flex items-center gap-2">
                         <i data-lucide="trending-up" class="w-3.5 h-3.5 animate-bounce"></i> +35% Avg Conversion Growth
                     </div>
                     
-                    <div class="newsletter-card p-6 sm:p-10 lg:p-16 rounded-[3rem] text-center">
+                    <div class="newsletter-card mt-6 md:mt-0 p-6 sm:p-10 lg:p-16 rounded-[3rem] text-center">
                         <h2 class="text-3xl lg:text-5xl font-medium font-heading mb-6">Start Growing with <span class="gradient-text">Better Product Insights</span></h2>
                         <p class="text-slate-300 mb-8 max-w-2xl mx-auto text-base lg:text-lg leading-relaxed">
                             Stop guessing. Watch how users interact with your SaaS and unlock product-led growth opportunities.
