@@ -330,3 +330,27 @@ h1, h2, h3, h4, h5, h6 {
     border-color: rgba(241, 245, 249, 0.4) !important;
 }
 
+/* Custom styles for hero section using secondary background color to enhance readability */
+.hero-secondary {
+    background-color: #64748b !important;
+}
+
+.hero-secondary .gradient-text {
+    background: linear-gradient(135deg, #c4b5fd 0%, #fbcfe8 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-secondary h1 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-secondary p {
+    color: #f8fafc !important; /* text-slate-50 */
+    font-weight: 500 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
